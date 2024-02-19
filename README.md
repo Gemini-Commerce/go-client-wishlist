@@ -79,7 +79,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *WishlistAPI* | [**WishlistAddItemToWishlist**](docs/WishlistAPI.md#wishlistadditemtowishlist) | **Post** /wishlist.Wishlist/AddItemToWishlist | 
 *WishlistAPI* | [**WishlistAreItemsInWishlists**](docs/WishlistAPI.md#wishlistareitemsinwishlists) | **Post** /wishlist.Wishlist/AreItemsInWishlists | 
+*WishlistAPI* | [**WishlistBulkCreateSharing**](docs/WishlistAPI.md#wishlistbulkcreatesharing) | **Post** /wishlist.Wishlist/BulkCreateSharing | Sharing endpoints
 *WishlistAPI* | [**WishlistBulkRemoveItemsFromWishlists**](docs/WishlistAPI.md#wishlistbulkremoveitemsfromwishlists) | **Post** /wishlist.Wishlist/BulkRemoveItemsFromWishlists | BulkRemoveItemsFromWishlists removes items from wishlists.
+*WishlistAPI* | [**WishlistBulkRevokeSharing**](docs/WishlistAPI.md#wishlistbulkrevokesharing) | **Post** /wishlist.Wishlist/BulkRevokeSharing | 
 *WishlistAPI* | [**WishlistCreateWishlist**](docs/WishlistAPI.md#wishlistcreatewishlist) | **Post** /wishlist.Wishlist/CreateWishlist | 
 *WishlistAPI* | [**WishlistDeleteWishlist**](docs/WishlistAPI.md#wishlistdeletewishlist) | **Post** /wishlist.Wishlist/DeleteWishlist | 
 *WishlistAPI* | [**WishlistGetItemFromWishlist**](docs/WishlistAPI.md#wishlistgetitemfromwishlist) | **Post** /wishlist.Wishlist/GetItemFromWishlist | 
@@ -102,7 +104,10 @@ Class | Method | HTTP request | Description
  - [WishlistAreItemsInWishlistsRequest](docs/WishlistAreItemsInWishlistsRequest.md)
  - [WishlistAreItemsInWishlistsResponse](docs/WishlistAreItemsInWishlistsResponse.md)
  - [WishlistAreItemsInWishlistsResponsePayload](docs/WishlistAreItemsInWishlistsResponsePayload.md)
+ - [WishlistBulkCreateSharingRequest](docs/WishlistBulkCreateSharingRequest.md)
+ - [WishlistBulkCreateSharingResponse](docs/WishlistBulkCreateSharingResponse.md)
  - [WishlistBulkRemoveItemsFromWishlistsRequest](docs/WishlistBulkRemoveItemsFromWishlistsRequest.md)
+ - [WishlistBulkRevokeSharingRequest](docs/WishlistBulkRevokeSharingRequest.md)
  - [WishlistCreateWishlistRequest](docs/WishlistCreateWishlistRequest.md)
  - [WishlistDeleteWishlistRequest](docs/WishlistDeleteWishlistRequest.md)
  - [WishlistGetItemFromWishlistRequest](docs/WishlistGetItemFromWishlistRequest.md)
@@ -114,8 +119,11 @@ Class | Method | HTTP request | Description
  - [WishlistListWishlistsResponse](docs/WishlistListWishlistsResponse.md)
  - [WishlistLocalizedText](docs/WishlistLocalizedText.md)
  - [WishlistMergeWishlistsRequest](docs/WishlistMergeWishlistsRequest.md)
+ - [WishlistPermission](docs/WishlistPermission.md)
  - [WishlistPrivacy](docs/WishlistPrivacy.md)
  - [WishlistRemoveItemFromWishlistRequest](docs/WishlistRemoveItemFromWishlistRequest.md)
+ - [WishlistSharingRequest](docs/WishlistSharingRequest.md)
+ - [WishlistSharingResponse](docs/WishlistSharingResponse.md)
  - [WishlistUpdateItemInWishlistRequest](docs/WishlistUpdateItemInWishlistRequest.md)
  - [WishlistUpdateItemInWishlistRequestPayload](docs/WishlistUpdateItemInWishlistRequestPayload.md)
  - [WishlistUpdateWishlistRequest](docs/WishlistUpdateWishlistRequest.md)

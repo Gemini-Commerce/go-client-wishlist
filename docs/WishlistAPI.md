@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**WishlistAddItemToWishlist**](WishlistAPI.md#WishlistAddItemToWishlist) | **Post** /wishlist.Wishlist/AddItemToWishlist | 
 [**WishlistAreItemsInWishlists**](WishlistAPI.md#WishlistAreItemsInWishlists) | **Post** /wishlist.Wishlist/AreItemsInWishlists | 
+[**WishlistBulkCreateSharing**](WishlistAPI.md#WishlistBulkCreateSharing) | **Post** /wishlist.Wishlist/BulkCreateSharing | Sharing endpoints
 [**WishlistBulkRemoveItemsFromWishlists**](WishlistAPI.md#WishlistBulkRemoveItemsFromWishlists) | **Post** /wishlist.Wishlist/BulkRemoveItemsFromWishlists | BulkRemoveItemsFromWishlists removes items from wishlists.
+[**WishlistBulkRevokeSharing**](WishlistAPI.md#WishlistBulkRevokeSharing) | **Post** /wishlist.Wishlist/BulkRevokeSharing | 
 [**WishlistCreateWishlist**](WishlistAPI.md#WishlistCreateWishlist) | **Post** /wishlist.Wishlist/CreateWishlist | 
 [**WishlistDeleteWishlist**](WishlistAPI.md#WishlistDeleteWishlist) | **Post** /wishlist.Wishlist/DeleteWishlist | 
 [**WishlistGetItemFromWishlist**](WishlistAPI.md#WishlistGetItemFromWishlist) | **Post** /wishlist.Wishlist/GetItemFromWishlist | 
@@ -40,7 +42,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistAddItemToWishlistRequest("TenantId_example", "WishlistId_example", "ItemGrn_example") // WishlistAddItemToWishlistRequest | 
+	body := *openapiclient.NewWishlistAddItemToWishlistRequest() // WishlistAddItemToWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -104,7 +106,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistAreItemsInWishlistsRequest("TenantId_example", []string{"ItemGrns_example"}) // WishlistAreItemsInWishlistsRequest | 
+	body := *openapiclient.NewWishlistAreItemsInWishlistsRequest() // WishlistAreItemsInWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -149,6 +151,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## WishlistBulkCreateSharing
+
+> WishlistBulkCreateSharingResponse WishlistBulkCreateSharing(ctx).Body(body).Execute()
+
+Sharing endpoints
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/gemini-commerce/go-client-wishlist"
+)
+
+func main() {
+	body := *openapiclient.NewWishlistBulkCreateSharingRequest() // WishlistBulkCreateSharingRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WishlistAPI.WishlistBulkCreateSharing(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WishlistAPI.WishlistBulkCreateSharing``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WishlistBulkCreateSharing`: WishlistBulkCreateSharingResponse
+	fmt.Fprintf(os.Stdout, "Response from `WishlistAPI.WishlistBulkCreateSharing`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWishlistBulkCreateSharingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WishlistBulkCreateSharingRequest**](WishlistBulkCreateSharingRequest.md) |  | 
+
+### Return type
+
+[**WishlistBulkCreateSharingResponse**](WishlistBulkCreateSharingResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WishlistBulkRemoveItemsFromWishlists
 
 > map[string]interface{} WishlistBulkRemoveItemsFromWishlists(ctx).Body(body).Execute()
@@ -168,7 +234,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistBulkRemoveItemsFromWishlistsRequest("TenantId_example", []string{"ItemGrns_example"}) // WishlistBulkRemoveItemsFromWishlistsRequest | 
+	body := *openapiclient.NewWishlistBulkRemoveItemsFromWishlistsRequest() // WishlistBulkRemoveItemsFromWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -213,6 +279,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## WishlistBulkRevokeSharing
+
+> map[string]interface{} WishlistBulkRevokeSharing(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/gemini-commerce/go-client-wishlist"
+)
+
+func main() {
+	body := *openapiclient.NewWishlistBulkRevokeSharingRequest() // WishlistBulkRevokeSharingRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WishlistAPI.WishlistBulkRevokeSharing(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WishlistAPI.WishlistBulkRevokeSharing``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WishlistBulkRevokeSharing`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `WishlistAPI.WishlistBulkRevokeSharing`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWishlistBulkRevokeSharingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WishlistBulkRevokeSharingRequest**](WishlistBulkRevokeSharingRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WishlistCreateWishlist
 
 > WishlistWishlistResponse WishlistCreateWishlist(ctx).Body(body).Execute()
@@ -232,7 +362,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistCreateWishlistRequest("TenantId_example", openapiclient.wishlistPrivacy("PRIVACY_UNKNOWN")) // WishlistCreateWishlistRequest | 
+	body := *openapiclient.NewWishlistCreateWishlistRequest() // WishlistCreateWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -296,7 +426,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistDeleteWishlistRequest("TenantId_example", "Id_example") // WishlistDeleteWishlistRequest | 
+	body := *openapiclient.NewWishlistDeleteWishlistRequest() // WishlistDeleteWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -360,7 +490,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistGetItemFromWishlistRequest("TenantId_example", "Id_example") // WishlistGetItemFromWishlistRequest | 
+	body := *openapiclient.NewWishlistGetItemFromWishlistRequest() // WishlistGetItemFromWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -424,7 +554,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistGetWishlistByIdRequest("TenantId_example", "Id_example") // WishlistGetWishlistByIdRequest | 
+	body := *openapiclient.NewWishlistGetWishlistByIdRequest() // WishlistGetWishlistByIdRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -488,7 +618,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistGetWishlistBySharedCodeRequest("TenantId_example", "SharedCode_example") // WishlistGetWishlistBySharedCodeRequest | 
+	body := *openapiclient.NewWishlistGetWishlistBySharedCodeRequest() // WishlistGetWishlistBySharedCodeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -552,7 +682,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistListWishlistItemsRequest("TenantId_example", "WishlistId_example") // WishlistListWishlistItemsRequest | 
+	body := *openapiclient.NewWishlistListWishlistItemsRequest() // WishlistListWishlistItemsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -616,7 +746,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistListWishlistsRequest("TenantId_example") // WishlistListWishlistsRequest | 
+	body := *openapiclient.NewWishlistListWishlistsRequest() // WishlistListWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -680,7 +810,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistMergeWishlistsRequest("TenantId_example", "StartingWishlistId_example", "CustomerGrn_example") // WishlistMergeWishlistsRequest | 
+	body := *openapiclient.NewWishlistMergeWishlistsRequest() // WishlistMergeWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -744,7 +874,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistRemoveItemFromWishlistRequest("TenantId_example", "Id_example") // WishlistRemoveItemFromWishlistRequest | 
+	body := *openapiclient.NewWishlistRemoveItemFromWishlistRequest() // WishlistRemoveItemFromWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -808,7 +938,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistUpdateItemInWishlistRequest("TenantId_example", "Id_example", *openapiclient.NewWishlistUpdateItemInWishlistRequestPayload(), "PayloadMask_example") // WishlistUpdateItemInWishlistRequest | 
+	body := *openapiclient.NewWishlistUpdateItemInWishlistRequest() // WishlistUpdateItemInWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -872,7 +1002,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistUpdateWishlistRequest("TenantId_example", "Id_example", *openapiclient.NewWishlistUpdateWishlistRequestPayload(), "PayloadMask_example") // WishlistUpdateWishlistRequest | 
+	body := *openapiclient.NewWishlistUpdateWishlistRequest() // WishlistUpdateWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

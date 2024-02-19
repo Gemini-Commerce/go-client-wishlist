@@ -12,8 +12,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the WishlistListWishlistsRequest type satisfies the MappedNullable interface at compile time
@@ -21,22 +19,19 @@ var _ MappedNullable = &WishlistListWishlistsRequest{}
 
 // WishlistListWishlistsRequest struct for WishlistListWishlistsRequest
 type WishlistListWishlistsRequest struct {
-	TenantId string `json:"tenantId"`
+	TenantId *string `json:"tenantId,omitempty"`
 	PageSize *int64 `json:"pageSize,omitempty"`
 	PageToken *string `json:"pageToken,omitempty"`
 	Filter *ListWishlistsRequestFilter `json:"filter,omitempty"`
-	FilterMask *string `json:"filterMask,omitempty"`
+	FilterMask []string `json:"filterMask,omitempty"`
 }
-
-type _WishlistListWishlistsRequest WishlistListWishlistsRequest
 
 // NewWishlistListWishlistsRequest instantiates a new WishlistListWishlistsRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWishlistListWishlistsRequest(tenantId string) *WishlistListWishlistsRequest {
+func NewWishlistListWishlistsRequest() *WishlistListWishlistsRequest {
 	this := WishlistListWishlistsRequest{}
-	this.TenantId = tenantId
 	return &this
 }
 
@@ -48,28 +43,36 @@ func NewWishlistListWishlistsRequestWithDefaults() *WishlistListWishlistsRequest
 	return &this
 }
 
-// GetTenantId returns the TenantId field value
+// GetTenantId returns the TenantId field value if set, zero value otherwise.
 func (o *WishlistListWishlistsRequest) GetTenantId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		var ret string
 		return ret
 	}
-
-	return o.TenantId
+	return *o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value
+// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistListWishlistsRequest) GetTenantIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
-	return &o.TenantId, true
+	return o.TenantId, true
 }
 
-// SetTenantId sets field value
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistListWishlistsRequest) HasTenantId() bool {
+	if o != nil && !IsNil(o.TenantId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *WishlistListWishlistsRequest) SetTenantId(v string) {
-	o.TenantId = v
+	o.TenantId = &v
 }
 
 // GetPageSize returns the PageSize field value if set, zero value otherwise.
@@ -169,17 +172,17 @@ func (o *WishlistListWishlistsRequest) SetFilter(v ListWishlistsRequestFilter) {
 }
 
 // GetFilterMask returns the FilterMask field value if set, zero value otherwise.
-func (o *WishlistListWishlistsRequest) GetFilterMask() string {
+func (o *WishlistListWishlistsRequest) GetFilterMask() []string {
 	if o == nil || IsNil(o.FilterMask) {
-		var ret string
+		var ret []string
 		return ret
 	}
-	return *o.FilterMask
+	return o.FilterMask
 }
 
 // GetFilterMaskOk returns a tuple with the FilterMask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WishlistListWishlistsRequest) GetFilterMaskOk() (*string, bool) {
+func (o *WishlistListWishlistsRequest) GetFilterMaskOk() ([]string, bool) {
 	if o == nil || IsNil(o.FilterMask) {
 		return nil, false
 	}
@@ -195,9 +198,9 @@ func (o *WishlistListWishlistsRequest) HasFilterMask() bool {
 	return false
 }
 
-// SetFilterMask gets a reference to the given string and assigns it to the FilterMask field.
-func (o *WishlistListWishlistsRequest) SetFilterMask(v string) {
-	o.FilterMask = &v
+// SetFilterMask gets a reference to the given []string and assigns it to the FilterMask field.
+func (o *WishlistListWishlistsRequest) SetFilterMask(v []string) {
+	o.FilterMask = v
 }
 
 func (o WishlistListWishlistsRequest) MarshalJSON() ([]byte, error) {
@@ -210,7 +213,9 @@ func (o WishlistListWishlistsRequest) MarshalJSON() ([]byte, error) {
 
 func (o WishlistListWishlistsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["tenantId"] = o.TenantId
+	if !IsNil(o.TenantId) {
+		toSerialize["tenantId"] = o.TenantId
+	}
 	if !IsNil(o.PageSize) {
 		toSerialize["pageSize"] = o.PageSize
 	}
@@ -224,43 +229,6 @@ func (o WishlistListWishlistsRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["filterMask"] = o.FilterMask
 	}
 	return toSerialize, nil
-}
-
-func (o *WishlistListWishlistsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"tenantId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varWishlistListWishlistsRequest := _WishlistListWishlistsRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistListWishlistsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WishlistListWishlistsRequest(varWishlistListWishlistsRequest)
-
-	return err
 }
 
 type NullableWishlistListWishlistsRequest struct {

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -14,7 +13,10 @@ docs/WishlistAddItemToWishlistRequest.md
 docs/WishlistAreItemsInWishlistsRequest.md
 docs/WishlistAreItemsInWishlistsResponse.md
 docs/WishlistAreItemsInWishlistsResponsePayload.md
+docs/WishlistBulkCreateSharingRequest.md
+docs/WishlistBulkCreateSharingResponse.md
 docs/WishlistBulkRemoveItemsFromWishlistsRequest.md
+docs/WishlistBulkRevokeSharingRequest.md
 docs/WishlistCreateWishlistRequest.md
 docs/WishlistDeleteWishlistRequest.md
 docs/WishlistGetItemFromWishlistRequest.md
@@ -26,8 +28,11 @@ docs/WishlistListWishlistsRequest.md
 docs/WishlistListWishlistsResponse.md
 docs/WishlistLocalizedText.md
 docs/WishlistMergeWishlistsRequest.md
+docs/WishlistPermission.md
 docs/WishlistPrivacy.md
 docs/WishlistRemoveItemFromWishlistRequest.md
+docs/WishlistSharingRequest.md
+docs/WishlistSharingResponse.md
 docs/WishlistUpdateItemInWishlistRequest.md
 docs/WishlistUpdateItemInWishlistRequestPayload.md
 docs/WishlistUpdateWishlistRequest.md
@@ -44,7 +49,10 @@ model_wishlist_add_item_to_wishlist_request.go
 model_wishlist_are_items_in_wishlists_request.go
 model_wishlist_are_items_in_wishlists_response.go
 model_wishlist_are_items_in_wishlists_response_payload.go
+model_wishlist_bulk_create_sharing_request.go
+model_wishlist_bulk_create_sharing_response.go
 model_wishlist_bulk_remove_items_from_wishlists_request.go
+model_wishlist_bulk_revoke_sharing_request.go
 model_wishlist_create_wishlist_request.go
 model_wishlist_delete_wishlist_request.go
 model_wishlist_get_item_from_wishlist_request.go
@@ -56,8 +64,11 @@ model_wishlist_list_wishlists_request.go
 model_wishlist_list_wishlists_response.go
 model_wishlist_localized_text.go
 model_wishlist_merge_wishlists_request.go
+model_wishlist_permission.go
 model_wishlist_privacy.go
 model_wishlist_remove_item_from_wishlist_request.go
+model_wishlist_sharing_request.go
+model_wishlist_sharing_response.go
 model_wishlist_update_item_in_wishlist_request.go
 model_wishlist_update_item_in_wishlist_request_payload.go
 model_wishlist_update_wishlist_request.go

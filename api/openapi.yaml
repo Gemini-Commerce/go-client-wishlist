@@ -4,8 +4,6 @@ info:
   version: version not set
 servers:
 - url: /
-tags:
-- name: Wishlist
 paths:
   /wishlist.Wishlist/AddItemToWishlist:
     post:
@@ -57,6 +55,32 @@ paths:
       tags:
       - Wishlist
       x-codegen-request-body-name: body
+  /wishlist.Wishlist/BulkCreateSharing:
+    post:
+      operationId: Wishlist_BulkCreateSharing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/wishlistBulkCreateSharingRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wishlistBulkCreateSharingResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Sharing endpoints
+      tags:
+      - Wishlist
+      x-codegen-request-body-name: body
   /wishlist.Wishlist/BulkRemoveItemsFromWishlists:
     post:
       operationId: Wishlist_BulkRemoveItemsFromWishlists
@@ -80,6 +104,31 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: BulkRemoveItemsFromWishlists removes items from wishlists.
+      tags:
+      - Wishlist
+      x-codegen-request-body-name: body
+  /wishlist.Wishlist/BulkRevokeSharing:
+    post:
+      operationId: Wishlist_BulkRevokeSharing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/wishlistBulkRevokeSharingRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wishlistBulkRevokeSharingResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
       tags:
       - Wishlist
       x-codegen-request-body-name: body
@@ -363,13 +412,17 @@ components:
     ListWishlistsRequestFilter:
       properties:
         customerGrn:
+          description: "If the customer GRN is set on JWT, it will be used as default.\
+            \ Otherwise, it will be used the customer_grn field."
           type: string
       type: object
     protobufAny:
-      additionalProperties:
-        type: object
       properties:
-        '@type':
+        typeUrl:
+          type: string
+        value:
+          format: byte
+          pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
           type: string
       type: object
     rpcStatus:
@@ -400,10 +453,6 @@ components:
         customerGrn:
           title: The customer adds the item to the wishlist
           type: string
-      required:
-      - itemGrn
-      - tenantId
-      - wishlistId
       type: object
     wishlistAreItemsInWishlistsRequest:
       properties:
@@ -418,9 +467,6 @@ components:
             type: string
           title: Max 500 items per request
           type: array
-      required:
-      - itemGrns
-      - tenantId
       type: object
     wishlistAreItemsInWishlistsResponse:
       example:
@@ -444,6 +490,40 @@ components:
             type: string
           type: object
       type: object
+    wishlistBulkCreateSharingRequest:
+      properties:
+        tenantId:
+          type: string
+        sharingRequests:
+          items:
+            $ref: '#/components/schemas/wishlistSharingRequest'
+          type: array
+      type: object
+    wishlistBulkCreateSharingResponse:
+      example:
+        sharingResponses:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          customerGrn: customerGrn
+          sharingGrn: sharingGrn
+          permission: null
+          customerAggregationId: customerAggregationId
+          wishlistId: wishlistId
+          sharingId: sharingId
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          customerGrn: customerGrn
+          sharingGrn: sharingGrn
+          permission: null
+          customerAggregationId: customerAggregationId
+          wishlistId: wishlistId
+          sharingId: sharingId
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        sharingResponses:
+          items:
+            $ref: '#/components/schemas/wishlistSharingResponse'
+          type: array
+      type: object
     wishlistBulkRemoveItemsFromWishlistsRequest:
       properties:
         tenantId:
@@ -460,11 +540,19 @@ components:
           items:
             type: string
           type: array
-      required:
-      - itemGrns
-      - tenantId
       type: object
     wishlistBulkRemoveItemsFromWishlistsResponse:
+      type: object
+    wishlistBulkRevokeSharingRequest:
+      properties:
+        tenantId:
+          type: string
+        sharingIds:
+          items:
+            type: string
+          type: array
+      type: object
+    wishlistBulkRevokeSharingResponse:
       type: object
     wishlistCreateWishlistRequest:
       properties:
@@ -477,13 +565,12 @@ components:
         description:
           $ref: '#/components/schemas/wishlistLocalizedText'
         customerGrn:
+          description: "If the customer GRN is set on JWT, it will be used as default.\
+            \ Otherwise, it will be used the customer_grn field."
           type: string
         isDefault:
           title: "If is the first wishlist for the customer, it will be set as default"
           type: boolean
-      required:
-      - privacy
-      - tenantId
       type: object
     wishlistDeleteWishlistRequest:
       properties:
@@ -491,9 +578,6 @@ components:
           type: string
         id:
           type: string
-      required:
-      - id
-      - tenantId
       type: object
     wishlistDeleteWishlistResponse:
       type: object
@@ -503,9 +587,6 @@ components:
           type: string
         id:
           type: string
-      required:
-      - id
-      - tenantId
       type: object
     wishlistGetWishlistByIdRequest:
       properties:
@@ -513,9 +594,6 @@ components:
           type: string
         id:
           type: string
-      required:
-      - id
-      - tenantId
       type: object
     wishlistGetWishlistBySharedCodeRequest:
       properties:
@@ -524,12 +602,9 @@ components:
         sharedCode:
           type: string
         customerGrn:
-          title: "If customer_grn is not provided, the wishlist will be returned only\
-            \ if it is not PRIVATE"
+          description: "If the customer GRN is set on JWT, it will be used as default.\
+            \ Otherwise, it will be used the customer_grn field."
           type: string
-      required:
-      - sharedCode
-      - tenantId
       type: object
     wishlistListWishlistItemsRequest:
       properties:
@@ -546,9 +621,6 @@ components:
           type: integer
         pageToken:
           type: string
-      required:
-      - tenantId
-      - wishlistId
       type: object
     wishlistListWishlistItemsResponse:
       example:
@@ -596,9 +668,9 @@ components:
         filter:
           $ref: '#/components/schemas/ListWishlistsRequestFilter'
         filterMask:
-          type: string
-      required:
-      - tenantId
+          items:
+            type: string
+          type: array
       type: object
     wishlistListWishlistsResponse:
       example:
@@ -659,15 +731,20 @@ components:
         startingWishlistId:
           type: string
         customerGrn:
+          description: "If the customer GRN is set on JWT, it will be used as default.\
+            \ Otherwise, it will be used the customer_grn field."
           type: string
         targetWishlistId:
           description: The wishlist to merge into the starting wishlist.
           type: string
-      required:
-      - customerGrn
-      - startingWishlistId
-      - tenantId
       type: object
+    wishlistPermission:
+      default: UNKNOWN_PERMISSION
+      enum:
+      - UNKNOWN_PERMISSION
+      - VIEW_PERMISSION
+      - EDIT_PERMISSION
+      type: string
     wishlistPrivacy:
       default: PRIVACY_UNKNOWN
       enum:
@@ -682,11 +759,49 @@ components:
           type: string
         id:
           type: string
-      required:
-      - id
-      - tenantId
       type: object
     wishlistRemoveItemFromWishlistResponse:
+      type: object
+    wishlistSharingRequest:
+      properties:
+        wishlistId:
+          type: string
+        permission:
+          $ref: '#/components/schemas/wishlistPermission'
+        customerGrn:
+          type: string
+        customerAggregationId:
+          type: string
+      type: object
+    wishlistSharingResponse:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        customerGrn: customerGrn
+        sharingGrn: sharingGrn
+        permission: null
+        customerAggregationId: customerAggregationId
+        wishlistId: wishlistId
+        sharingId: sharingId
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        sharingId:
+          type: string
+        sharingGrn:
+          type: string
+        wishlistId:
+          type: string
+        permission:
+          $ref: '#/components/schemas/wishlistPermission'
+        customerGrn:
+          type: string
+        customerAggregationId:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
       type: object
     wishlistUpdateItemInWishlistRequest:
       properties:
@@ -697,12 +812,9 @@ components:
         payload:
           $ref: '#/components/schemas/wishlistUpdateItemInWishlistRequestPayload'
         payloadMask:
-          type: string
-      required:
-      - id
-      - payload
-      - payloadMask
-      - tenantId
+          items:
+            type: string
+          type: array
       type: object
     wishlistUpdateItemInWishlistRequestPayload:
       properties:
@@ -724,12 +836,9 @@ components:
         payload:
           $ref: '#/components/schemas/wishlistUpdateWishlistRequestPayload'
         payloadMask:
-          type: string
-      required:
-      - id
-      - payload
-      - payloadMask
-      - tenantId
+          items:
+            type: string
+          type: array
       type: object
     wishlistUpdateWishlistRequestPayload:
       properties:

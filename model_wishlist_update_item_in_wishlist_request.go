@@ -12,8 +12,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the WishlistUpdateItemInWishlistRequest type satisfies the MappedNullable interface at compile time
@@ -21,24 +19,18 @@ var _ MappedNullable = &WishlistUpdateItemInWishlistRequest{}
 
 // WishlistUpdateItemInWishlistRequest struct for WishlistUpdateItemInWishlistRequest
 type WishlistUpdateItemInWishlistRequest struct {
-	TenantId string `json:"tenantId"`
-	Id string `json:"id"`
-	Payload WishlistUpdateItemInWishlistRequestPayload `json:"payload"`
-	PayloadMask string `json:"payloadMask"`
+	TenantId *string `json:"tenantId,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Payload *WishlistUpdateItemInWishlistRequestPayload `json:"payload,omitempty"`
+	PayloadMask []string `json:"payloadMask,omitempty"`
 }
-
-type _WishlistUpdateItemInWishlistRequest WishlistUpdateItemInWishlistRequest
 
 // NewWishlistUpdateItemInWishlistRequest instantiates a new WishlistUpdateItemInWishlistRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWishlistUpdateItemInWishlistRequest(tenantId string, id string, payload WishlistUpdateItemInWishlistRequestPayload, payloadMask string) *WishlistUpdateItemInWishlistRequest {
+func NewWishlistUpdateItemInWishlistRequest() *WishlistUpdateItemInWishlistRequest {
 	this := WishlistUpdateItemInWishlistRequest{}
-	this.TenantId = tenantId
-	this.Id = id
-	this.Payload = payload
-	this.PayloadMask = payloadMask
 	return &this
 }
 
@@ -50,99 +42,131 @@ func NewWishlistUpdateItemInWishlistRequestWithDefaults() *WishlistUpdateItemInW
 	return &this
 }
 
-// GetTenantId returns the TenantId field value
+// GetTenantId returns the TenantId field value if set, zero value otherwise.
 func (o *WishlistUpdateItemInWishlistRequest) GetTenantId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		var ret string
 		return ret
 	}
-
-	return o.TenantId
+	return *o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value
+// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistUpdateItemInWishlistRequest) GetTenantIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
-	return &o.TenantId, true
+	return o.TenantId, true
 }
 
-// SetTenantId sets field value
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequest) HasTenantId() bool {
+	if o != nil && !IsNil(o.TenantId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *WishlistUpdateItemInWishlistRequest) SetTenantId(v string) {
-	o.TenantId = v
+	o.TenantId = &v
 }
 
-// GetId returns the Id field value
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *WishlistUpdateItemInWishlistRequest) GetId() string {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
-
-	return o.Id
+	return *o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistUpdateItemInWishlistRequest) GetIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id, true
 }
 
-// SetId sets field value
+// HasId returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequest) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *WishlistUpdateItemInWishlistRequest) SetId(v string) {
-	o.Id = v
+	o.Id = &v
 }
 
-// GetPayload returns the Payload field value
+// GetPayload returns the Payload field value if set, zero value otherwise.
 func (o *WishlistUpdateItemInWishlistRequest) GetPayload() WishlistUpdateItemInWishlistRequestPayload {
-	if o == nil {
+	if o == nil || IsNil(o.Payload) {
 		var ret WishlistUpdateItemInWishlistRequestPayload
 		return ret
 	}
-
-	return o.Payload
+	return *o.Payload
 }
 
-// GetPayloadOk returns a tuple with the Payload field value
+// GetPayloadOk returns a tuple with the Payload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistUpdateItemInWishlistRequest) GetPayloadOk() (*WishlistUpdateItemInWishlistRequestPayload, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Payload) {
 		return nil, false
 	}
-	return &o.Payload, true
+	return o.Payload, true
 }
 
-// SetPayload sets field value
-func (o *WishlistUpdateItemInWishlistRequest) SetPayload(v WishlistUpdateItemInWishlistRequestPayload) {
-	o.Payload = v
-}
-
-// GetPayloadMask returns the PayloadMask field value
-func (o *WishlistUpdateItemInWishlistRequest) GetPayloadMask() string {
-	if o == nil {
-		var ret string
-		return ret
+// HasPayload returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequest) HasPayload() bool {
+	if o != nil && !IsNil(o.Payload) {
+		return true
 	}
 
+	return false
+}
+
+// SetPayload gets a reference to the given WishlistUpdateItemInWishlistRequestPayload and assigns it to the Payload field.
+func (o *WishlistUpdateItemInWishlistRequest) SetPayload(v WishlistUpdateItemInWishlistRequestPayload) {
+	o.Payload = &v
+}
+
+// GetPayloadMask returns the PayloadMask field value if set, zero value otherwise.
+func (o *WishlistUpdateItemInWishlistRequest) GetPayloadMask() []string {
+	if o == nil || IsNil(o.PayloadMask) {
+		var ret []string
+		return ret
+	}
 	return o.PayloadMask
 }
 
-// GetPayloadMaskOk returns a tuple with the PayloadMask field value
+// GetPayloadMaskOk returns a tuple with the PayloadMask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WishlistUpdateItemInWishlistRequest) GetPayloadMaskOk() (*string, bool) {
-	if o == nil {
+func (o *WishlistUpdateItemInWishlistRequest) GetPayloadMaskOk() ([]string, bool) {
+	if o == nil || IsNil(o.PayloadMask) {
 		return nil, false
 	}
-	return &o.PayloadMask, true
+	return o.PayloadMask, true
 }
 
-// SetPayloadMask sets field value
-func (o *WishlistUpdateItemInWishlistRequest) SetPayloadMask(v string) {
+// HasPayloadMask returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequest) HasPayloadMask() bool {
+	if o != nil && !IsNil(o.PayloadMask) {
+		return true
+	}
+
+	return false
+}
+
+// SetPayloadMask gets a reference to the given []string and assigns it to the PayloadMask field.
+func (o *WishlistUpdateItemInWishlistRequest) SetPayloadMask(v []string) {
 	o.PayloadMask = v
 }
 
@@ -156,51 +180,19 @@ func (o WishlistUpdateItemInWishlistRequest) MarshalJSON() ([]byte, error) {
 
 func (o WishlistUpdateItemInWishlistRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["tenantId"] = o.TenantId
-	toSerialize["id"] = o.Id
-	toSerialize["payload"] = o.Payload
-	toSerialize["payloadMask"] = o.PayloadMask
+	if !IsNil(o.TenantId) {
+		toSerialize["tenantId"] = o.TenantId
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.Payload) {
+		toSerialize["payload"] = o.Payload
+	}
+	if !IsNil(o.PayloadMask) {
+		toSerialize["payloadMask"] = o.PayloadMask
+	}
 	return toSerialize, nil
-}
-
-func (o *WishlistUpdateItemInWishlistRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"tenantId",
-		"id",
-		"payload",
-		"payloadMask",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varWishlistUpdateItemInWishlistRequest := _WishlistUpdateItemInWishlistRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistUpdateItemInWishlistRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WishlistUpdateItemInWishlistRequest(varWishlistUpdateItemInWishlistRequest)
-
-	return err
 }
 
 type NullableWishlistUpdateItemInWishlistRequest struct {

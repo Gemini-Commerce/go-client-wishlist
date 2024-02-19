@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TenantId**| **string** |   |
-**WishlistId**| **string** |   |
-**ItemGrn**| **string** |   |
+**TenantId**| **string** |   | [optional]
+**WishlistId**| **string** |   | [optional]
+**ItemGrn**| **string** |   | [optional]
 **PreferredQuantity**| **string** |   | [optional]
 **Description**| [**WishlistLocalizedText**](WishlistLocalizedText.md) |   | [optional]
 **CustomerGrn**| **string** |   | [optional]

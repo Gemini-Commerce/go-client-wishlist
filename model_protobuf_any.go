@@ -19,11 +19,9 @@ var _ MappedNullable = &ProtobufAny{}
 
 // ProtobufAny struct for ProtobufAny
 type ProtobufAny struct {
-	Type *string `json:"@type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TypeUrl *string `json:"typeUrl,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
-
-type _ProtobufAny ProtobufAny
 
 // NewProtobufAny instantiates a new ProtobufAny object
 // This constructor will assign default values to properties that have it defined,
@@ -42,36 +40,68 @@ func NewProtobufAnyWithDefaults() *ProtobufAny {
 	return &this
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *ProtobufAny) GetType() string {
-	if o == nil || IsNil(o.Type) {
+// GetTypeUrl returns the TypeUrl field value if set, zero value otherwise.
+func (o *ProtobufAny) GetTypeUrl() string {
+	if o == nil || IsNil(o.TypeUrl) {
 		var ret string
 		return ret
 	}
-	return *o.Type
+	return *o.TypeUrl
 }
 
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// GetTypeUrlOk returns a tuple with the TypeUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProtobufAny) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+func (o *ProtobufAny) GetTypeUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.TypeUrl) {
 		return nil, false
 	}
-	return o.Type, true
+	return o.TypeUrl, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *ProtobufAny) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+// HasTypeUrl returns a boolean if a field has been set.
+func (o *ProtobufAny) HasTypeUrl() bool {
+	if o != nil && !IsNil(o.TypeUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ProtobufAny) SetType(v string) {
-	o.Type = &v
+// SetTypeUrl gets a reference to the given string and assigns it to the TypeUrl field.
+func (o *ProtobufAny) SetTypeUrl(v string) {
+	o.TypeUrl = &v
+}
+
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *ProtobufAny) GetValue() string {
+	if o == nil || IsNil(o.Value) {
+		var ret string
+		return ret
+	}
+	return *o.Value
+}
+
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProtobufAny) GetValueOk() (*string, bool) {
+	if o == nil || IsNil(o.Value) {
+		return nil, false
+	}
+	return o.Value, true
+}
+
+// HasValue returns a boolean if a field has been set.
+func (o *ProtobufAny) HasValue() bool {
+	if o != nil && !IsNil(o.Value) {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *ProtobufAny) SetValue(v string) {
+	o.Value = &v
 }
 
 func (o ProtobufAny) MarshalJSON() ([]byte, error) {
@@ -84,36 +114,13 @@ func (o ProtobufAny) MarshalJSON() ([]byte, error) {
 
 func (o ProtobufAny) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
-		toSerialize["@type"] = o.Type
+	if !IsNil(o.TypeUrl) {
+		toSerialize["typeUrl"] = o.TypeUrl
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
-
 	return toSerialize, nil
-}
-
-func (o *ProtobufAny) UnmarshalJSON(data []byte) (err error) {
-	varProtobufAny := _ProtobufAny{}
-
-	err = json.Unmarshal(data, &varProtobufAny)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProtobufAny(varProtobufAny)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "@type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableProtobufAny struct {

@@ -19,6 +19,7 @@ var _ MappedNullable = &ListWishlistsRequestFilter{}
 
 // ListWishlistsRequestFilter struct for ListWishlistsRequestFilter
 type ListWishlistsRequestFilter struct {
+	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
 	CustomerGrn *string `json:"customerGrn,omitempty"`
 }
 

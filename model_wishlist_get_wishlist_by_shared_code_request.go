@@ -12,8 +12,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the WishlistGetWishlistBySharedCodeRequest type satisfies the MappedNullable interface at compile time
@@ -21,21 +19,18 @@ var _ MappedNullable = &WishlistGetWishlistBySharedCodeRequest{}
 
 // WishlistGetWishlistBySharedCodeRequest struct for WishlistGetWishlistBySharedCodeRequest
 type WishlistGetWishlistBySharedCodeRequest struct {
-	TenantId string `json:"tenantId"`
-	SharedCode string `json:"sharedCode"`
+	TenantId *string `json:"tenantId,omitempty"`
+	SharedCode *string `json:"sharedCode,omitempty"`
+	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
 	CustomerGrn *string `json:"customerGrn,omitempty"`
 }
-
-type _WishlistGetWishlistBySharedCodeRequest WishlistGetWishlistBySharedCodeRequest
 
 // NewWishlistGetWishlistBySharedCodeRequest instantiates a new WishlistGetWishlistBySharedCodeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWishlistGetWishlistBySharedCodeRequest(tenantId string, sharedCode string) *WishlistGetWishlistBySharedCodeRequest {
+func NewWishlistGetWishlistBySharedCodeRequest() *WishlistGetWishlistBySharedCodeRequest {
 	this := WishlistGetWishlistBySharedCodeRequest{}
-	this.TenantId = tenantId
-	this.SharedCode = sharedCode
 	return &this
 }
 
@@ -47,52 +42,68 @@ func NewWishlistGetWishlistBySharedCodeRequestWithDefaults() *WishlistGetWishlis
 	return &this
 }
 
-// GetTenantId returns the TenantId field value
+// GetTenantId returns the TenantId field value if set, zero value otherwise.
 func (o *WishlistGetWishlistBySharedCodeRequest) GetTenantId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		var ret string
 		return ret
 	}
-
-	return o.TenantId
+	return *o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value
+// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistGetWishlistBySharedCodeRequest) GetTenantIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
-	return &o.TenantId, true
+	return o.TenantId, true
 }
 
-// SetTenantId sets field value
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistGetWishlistBySharedCodeRequest) HasTenantId() bool {
+	if o != nil && !IsNil(o.TenantId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *WishlistGetWishlistBySharedCodeRequest) SetTenantId(v string) {
-	o.TenantId = v
+	o.TenantId = &v
 }
 
-// GetSharedCode returns the SharedCode field value
+// GetSharedCode returns the SharedCode field value if set, zero value otherwise.
 func (o *WishlistGetWishlistBySharedCodeRequest) GetSharedCode() string {
-	if o == nil {
+	if o == nil || IsNil(o.SharedCode) {
 		var ret string
 		return ret
 	}
-
-	return o.SharedCode
+	return *o.SharedCode
 }
 
-// GetSharedCodeOk returns a tuple with the SharedCode field value
+// GetSharedCodeOk returns a tuple with the SharedCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistGetWishlistBySharedCodeRequest) GetSharedCodeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SharedCode) {
 		return nil, false
 	}
-	return &o.SharedCode, true
+	return o.SharedCode, true
 }
 
-// SetSharedCode sets field value
+// HasSharedCode returns a boolean if a field has been set.
+func (o *WishlistGetWishlistBySharedCodeRequest) HasSharedCode() bool {
+	if o != nil && !IsNil(o.SharedCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedCode gets a reference to the given string and assigns it to the SharedCode field.
 func (o *WishlistGetWishlistBySharedCodeRequest) SetSharedCode(v string) {
-	o.SharedCode = v
+	o.SharedCode = &v
 }
 
 // GetCustomerGrn returns the CustomerGrn field value if set, zero value otherwise.
@@ -137,50 +148,16 @@ func (o WishlistGetWishlistBySharedCodeRequest) MarshalJSON() ([]byte, error) {
 
 func (o WishlistGetWishlistBySharedCodeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["tenantId"] = o.TenantId
-	toSerialize["sharedCode"] = o.SharedCode
+	if !IsNil(o.TenantId) {
+		toSerialize["tenantId"] = o.TenantId
+	}
+	if !IsNil(o.SharedCode) {
+		toSerialize["sharedCode"] = o.SharedCode
+	}
 	if !IsNil(o.CustomerGrn) {
 		toSerialize["customerGrn"] = o.CustomerGrn
 	}
 	return toSerialize, nil
-}
-
-func (o *WishlistGetWishlistBySharedCodeRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"tenantId",
-		"sharedCode",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varWishlistGetWishlistBySharedCodeRequest := _WishlistGetWishlistBySharedCodeRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistGetWishlistBySharedCodeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WishlistGetWishlistBySharedCodeRequest(varWishlistGetWishlistBySharedCodeRequest)
-
-	return err
 }
 
 type NullableWishlistGetWishlistBySharedCodeRequest struct {

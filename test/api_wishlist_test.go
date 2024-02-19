@@ -46,11 +46,35 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WishlistAPIService WishlistBulkCreateSharing", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.WishlistAPI.WishlistBulkCreateSharing(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WishlistAPIService WishlistBulkRemoveItemsFromWishlists", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistBulkRemoveItemsFromWishlists(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WishlistAPIService WishlistBulkRevokeSharing", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.WishlistAPI.WishlistBulkRevokeSharing(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

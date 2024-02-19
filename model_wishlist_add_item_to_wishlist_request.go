@@ -12,8 +12,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the WishlistAddItemToWishlistRequest type satisfies the MappedNullable interface at compile time
@@ -21,25 +19,20 @@ var _ MappedNullable = &WishlistAddItemToWishlistRequest{}
 
 // WishlistAddItemToWishlistRequest struct for WishlistAddItemToWishlistRequest
 type WishlistAddItemToWishlistRequest struct {
-	TenantId string `json:"tenantId"`
-	WishlistId string `json:"wishlistId"`
-	ItemGrn string `json:"itemGrn"`
+	TenantId *string `json:"tenantId,omitempty"`
+	WishlistId *string `json:"wishlistId,omitempty"`
+	ItemGrn *string `json:"itemGrn,omitempty"`
 	PreferredQuantity *string `json:"preferredQuantity,omitempty"`
 	Description *WishlistLocalizedText `json:"description,omitempty"`
 	CustomerGrn *string `json:"customerGrn,omitempty"`
 }
 
-type _WishlistAddItemToWishlistRequest WishlistAddItemToWishlistRequest
-
 // NewWishlistAddItemToWishlistRequest instantiates a new WishlistAddItemToWishlistRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWishlistAddItemToWishlistRequest(tenantId string, wishlistId string, itemGrn string) *WishlistAddItemToWishlistRequest {
+func NewWishlistAddItemToWishlistRequest() *WishlistAddItemToWishlistRequest {
 	this := WishlistAddItemToWishlistRequest{}
-	this.TenantId = tenantId
-	this.WishlistId = wishlistId
-	this.ItemGrn = itemGrn
 	return &this
 }
 
@@ -51,76 +44,100 @@ func NewWishlistAddItemToWishlistRequestWithDefaults() *WishlistAddItemToWishlis
 	return &this
 }
 
-// GetTenantId returns the TenantId field value
+// GetTenantId returns the TenantId field value if set, zero value otherwise.
 func (o *WishlistAddItemToWishlistRequest) GetTenantId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		var ret string
 		return ret
 	}
-
-	return o.TenantId
+	return *o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value
+// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistAddItemToWishlistRequest) GetTenantIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
-	return &o.TenantId, true
+	return o.TenantId, true
 }
 
-// SetTenantId sets field value
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistAddItemToWishlistRequest) HasTenantId() bool {
+	if o != nil && !IsNil(o.TenantId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *WishlistAddItemToWishlistRequest) SetTenantId(v string) {
-	o.TenantId = v
+	o.TenantId = &v
 }
 
-// GetWishlistId returns the WishlistId field value
+// GetWishlistId returns the WishlistId field value if set, zero value otherwise.
 func (o *WishlistAddItemToWishlistRequest) GetWishlistId() string {
-	if o == nil {
+	if o == nil || IsNil(o.WishlistId) {
 		var ret string
 		return ret
 	}
-
-	return o.WishlistId
+	return *o.WishlistId
 }
 
-// GetWishlistIdOk returns a tuple with the WishlistId field value
+// GetWishlistIdOk returns a tuple with the WishlistId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistAddItemToWishlistRequest) GetWishlistIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.WishlistId) {
 		return nil, false
 	}
-	return &o.WishlistId, true
+	return o.WishlistId, true
 }
 
-// SetWishlistId sets field value
+// HasWishlistId returns a boolean if a field has been set.
+func (o *WishlistAddItemToWishlistRequest) HasWishlistId() bool {
+	if o != nil && !IsNil(o.WishlistId) {
+		return true
+	}
+
+	return false
+}
+
+// SetWishlistId gets a reference to the given string and assigns it to the WishlistId field.
 func (o *WishlistAddItemToWishlistRequest) SetWishlistId(v string) {
-	o.WishlistId = v
+	o.WishlistId = &v
 }
 
-// GetItemGrn returns the ItemGrn field value
+// GetItemGrn returns the ItemGrn field value if set, zero value otherwise.
 func (o *WishlistAddItemToWishlistRequest) GetItemGrn() string {
-	if o == nil {
+	if o == nil || IsNil(o.ItemGrn) {
 		var ret string
 		return ret
 	}
-
-	return o.ItemGrn
+	return *o.ItemGrn
 }
 
-// GetItemGrnOk returns a tuple with the ItemGrn field value
+// GetItemGrnOk returns a tuple with the ItemGrn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistAddItemToWishlistRequest) GetItemGrnOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ItemGrn) {
 		return nil, false
 	}
-	return &o.ItemGrn, true
+	return o.ItemGrn, true
 }
 
-// SetItemGrn sets field value
+// HasItemGrn returns a boolean if a field has been set.
+func (o *WishlistAddItemToWishlistRequest) HasItemGrn() bool {
+	if o != nil && !IsNil(o.ItemGrn) {
+		return true
+	}
+
+	return false
+}
+
+// SetItemGrn gets a reference to the given string and assigns it to the ItemGrn field.
 func (o *WishlistAddItemToWishlistRequest) SetItemGrn(v string) {
-	o.ItemGrn = v
+	o.ItemGrn = &v
 }
 
 // GetPreferredQuantity returns the PreferredQuantity field value if set, zero value otherwise.
@@ -229,9 +246,15 @@ func (o WishlistAddItemToWishlistRequest) MarshalJSON() ([]byte, error) {
 
 func (o WishlistAddItemToWishlistRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["tenantId"] = o.TenantId
-	toSerialize["wishlistId"] = o.WishlistId
-	toSerialize["itemGrn"] = o.ItemGrn
+	if !IsNil(o.TenantId) {
+		toSerialize["tenantId"] = o.TenantId
+	}
+	if !IsNil(o.WishlistId) {
+		toSerialize["wishlistId"] = o.WishlistId
+	}
+	if !IsNil(o.ItemGrn) {
+		toSerialize["itemGrn"] = o.ItemGrn
+	}
 	if !IsNil(o.PreferredQuantity) {
 		toSerialize["preferredQuantity"] = o.PreferredQuantity
 	}
@@ -242,45 +265,6 @@ func (o WishlistAddItemToWishlistRequest) ToMap() (map[string]interface{}, error
 		toSerialize["customerGrn"] = o.CustomerGrn
 	}
 	return toSerialize, nil
-}
-
-func (o *WishlistAddItemToWishlistRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"tenantId",
-		"wishlistId",
-		"itemGrn",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varWishlistAddItemToWishlistRequest := _WishlistAddItemToWishlistRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistAddItemToWishlistRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WishlistAddItemToWishlistRequest(varWishlistAddItemToWishlistRequest)
-
-	return err
 }
 
 type NullableWishlistAddItemToWishlistRequest struct {

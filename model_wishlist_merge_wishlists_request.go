@@ -12,8 +12,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the WishlistMergeWishlistsRequest type satisfies the MappedNullable interface at compile time
@@ -21,24 +19,20 @@ var _ MappedNullable = &WishlistMergeWishlistsRequest{}
 
 // WishlistMergeWishlistsRequest struct for WishlistMergeWishlistsRequest
 type WishlistMergeWishlistsRequest struct {
-	TenantId string `json:"tenantId"`
-	StartingWishlistId string `json:"startingWishlistId"`
-	CustomerGrn string `json:"customerGrn"`
+	TenantId *string `json:"tenantId,omitempty"`
+	StartingWishlistId *string `json:"startingWishlistId,omitempty"`
+	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
+	CustomerGrn *string `json:"customerGrn,omitempty"`
 	// The wishlist to merge into the starting wishlist.
 	TargetWishlistId *string `json:"targetWishlistId,omitempty"`
 }
-
-type _WishlistMergeWishlistsRequest WishlistMergeWishlistsRequest
 
 // NewWishlistMergeWishlistsRequest instantiates a new WishlistMergeWishlistsRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWishlistMergeWishlistsRequest(tenantId string, startingWishlistId string, customerGrn string) *WishlistMergeWishlistsRequest {
+func NewWishlistMergeWishlistsRequest() *WishlistMergeWishlistsRequest {
 	this := WishlistMergeWishlistsRequest{}
-	this.TenantId = tenantId
-	this.StartingWishlistId = startingWishlistId
-	this.CustomerGrn = customerGrn
 	return &this
 }
 
@@ -50,76 +44,100 @@ func NewWishlistMergeWishlistsRequestWithDefaults() *WishlistMergeWishlistsReque
 	return &this
 }
 
-// GetTenantId returns the TenantId field value
+// GetTenantId returns the TenantId field value if set, zero value otherwise.
 func (o *WishlistMergeWishlistsRequest) GetTenantId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		var ret string
 		return ret
 	}
-
-	return o.TenantId
+	return *o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value
+// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistMergeWishlistsRequest) GetTenantIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
-	return &o.TenantId, true
+	return o.TenantId, true
 }
 
-// SetTenantId sets field value
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistMergeWishlistsRequest) HasTenantId() bool {
+	if o != nil && !IsNil(o.TenantId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *WishlistMergeWishlistsRequest) SetTenantId(v string) {
-	o.TenantId = v
+	o.TenantId = &v
 }
 
-// GetStartingWishlistId returns the StartingWishlistId field value
+// GetStartingWishlistId returns the StartingWishlistId field value if set, zero value otherwise.
 func (o *WishlistMergeWishlistsRequest) GetStartingWishlistId() string {
-	if o == nil {
+	if o == nil || IsNil(o.StartingWishlistId) {
 		var ret string
 		return ret
 	}
-
-	return o.StartingWishlistId
+	return *o.StartingWishlistId
 }
 
-// GetStartingWishlistIdOk returns a tuple with the StartingWishlistId field value
+// GetStartingWishlistIdOk returns a tuple with the StartingWishlistId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistMergeWishlistsRequest) GetStartingWishlistIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StartingWishlistId) {
 		return nil, false
 	}
-	return &o.StartingWishlistId, true
+	return o.StartingWishlistId, true
 }
 
-// SetStartingWishlistId sets field value
+// HasStartingWishlistId returns a boolean if a field has been set.
+func (o *WishlistMergeWishlistsRequest) HasStartingWishlistId() bool {
+	if o != nil && !IsNil(o.StartingWishlistId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartingWishlistId gets a reference to the given string and assigns it to the StartingWishlistId field.
 func (o *WishlistMergeWishlistsRequest) SetStartingWishlistId(v string) {
-	o.StartingWishlistId = v
+	o.StartingWishlistId = &v
 }
 
-// GetCustomerGrn returns the CustomerGrn field value
+// GetCustomerGrn returns the CustomerGrn field value if set, zero value otherwise.
 func (o *WishlistMergeWishlistsRequest) GetCustomerGrn() string {
-	if o == nil {
+	if o == nil || IsNil(o.CustomerGrn) {
 		var ret string
 		return ret
 	}
-
-	return o.CustomerGrn
+	return *o.CustomerGrn
 }
 
-// GetCustomerGrnOk returns a tuple with the CustomerGrn field value
+// GetCustomerGrnOk returns a tuple with the CustomerGrn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistMergeWishlistsRequest) GetCustomerGrnOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CustomerGrn) {
 		return nil, false
 	}
-	return &o.CustomerGrn, true
+	return o.CustomerGrn, true
 }
 
-// SetCustomerGrn sets field value
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistMergeWishlistsRequest) HasCustomerGrn() bool {
+	if o != nil && !IsNil(o.CustomerGrn) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomerGrn gets a reference to the given string and assigns it to the CustomerGrn field.
 func (o *WishlistMergeWishlistsRequest) SetCustomerGrn(v string) {
-	o.CustomerGrn = v
+	o.CustomerGrn = &v
 }
 
 // GetTargetWishlistId returns the TargetWishlistId field value if set, zero value otherwise.
@@ -164,52 +182,19 @@ func (o WishlistMergeWishlistsRequest) MarshalJSON() ([]byte, error) {
 
 func (o WishlistMergeWishlistsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["tenantId"] = o.TenantId
-	toSerialize["startingWishlistId"] = o.StartingWishlistId
-	toSerialize["customerGrn"] = o.CustomerGrn
+	if !IsNil(o.TenantId) {
+		toSerialize["tenantId"] = o.TenantId
+	}
+	if !IsNil(o.StartingWishlistId) {
+		toSerialize["startingWishlistId"] = o.StartingWishlistId
+	}
+	if !IsNil(o.CustomerGrn) {
+		toSerialize["customerGrn"] = o.CustomerGrn
+	}
 	if !IsNil(o.TargetWishlistId) {
 		toSerialize["targetWishlistId"] = o.TargetWishlistId
 	}
 	return toSerialize, nil
-}
-
-func (o *WishlistMergeWishlistsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"tenantId",
-		"startingWishlistId",
-		"customerGrn",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varWishlistMergeWishlistsRequest := _WishlistMergeWishlistsRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistMergeWishlistsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WishlistMergeWishlistsRequest(varWishlistMergeWishlistsRequest)
-
-	return err
 }
 
 type NullableWishlistMergeWishlistsRequest struct {

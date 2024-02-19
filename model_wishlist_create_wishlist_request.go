@@ -12,8 +12,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the WishlistCreateWishlistRequest type satisfies the MappedNullable interface at compile time
@@ -21,24 +19,23 @@ var _ MappedNullable = &WishlistCreateWishlistRequest{}
 
 // WishlistCreateWishlistRequest struct for WishlistCreateWishlistRequest
 type WishlistCreateWishlistRequest struct {
-	TenantId string `json:"tenantId"`
-	Privacy WishlistPrivacy `json:"privacy"`
+	TenantId *string `json:"tenantId,omitempty"`
+	Privacy *WishlistPrivacy `json:"privacy,omitempty"`
 	Label *WishlistLocalizedText `json:"label,omitempty"`
 	Description *WishlistLocalizedText `json:"description,omitempty"`
+	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
 	CustomerGrn *string `json:"customerGrn,omitempty"`
 	IsDefault *bool `json:"isDefault,omitempty"`
 }
-
-type _WishlistCreateWishlistRequest WishlistCreateWishlistRequest
 
 // NewWishlistCreateWishlistRequest instantiates a new WishlistCreateWishlistRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWishlistCreateWishlistRequest(tenantId string, privacy WishlistPrivacy) *WishlistCreateWishlistRequest {
+func NewWishlistCreateWishlistRequest() *WishlistCreateWishlistRequest {
 	this := WishlistCreateWishlistRequest{}
-	this.TenantId = tenantId
-	this.Privacy = privacy
+	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
+	this.Privacy = &privacy
 	return &this
 }
 
@@ -48,56 +45,72 @@ func NewWishlistCreateWishlistRequest(tenantId string, privacy WishlistPrivacy) 
 func NewWishlistCreateWishlistRequestWithDefaults() *WishlistCreateWishlistRequest {
 	this := WishlistCreateWishlistRequest{}
 	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
-	this.Privacy = privacy
+	this.Privacy = &privacy
 	return &this
 }
 
-// GetTenantId returns the TenantId field value
+// GetTenantId returns the TenantId field value if set, zero value otherwise.
 func (o *WishlistCreateWishlistRequest) GetTenantId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		var ret string
 		return ret
 	}
-
-	return o.TenantId
+	return *o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value
+// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistCreateWishlistRequest) GetTenantIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
-	return &o.TenantId, true
+	return o.TenantId, true
 }
 
-// SetTenantId sets field value
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) HasTenantId() bool {
+	if o != nil && !IsNil(o.TenantId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *WishlistCreateWishlistRequest) SetTenantId(v string) {
-	o.TenantId = v
+	o.TenantId = &v
 }
 
-// GetPrivacy returns the Privacy field value
+// GetPrivacy returns the Privacy field value if set, zero value otherwise.
 func (o *WishlistCreateWishlistRequest) GetPrivacy() WishlistPrivacy {
-	if o == nil {
+	if o == nil || IsNil(o.Privacy) {
 		var ret WishlistPrivacy
 		return ret
 	}
-
-	return o.Privacy
+	return *o.Privacy
 }
 
-// GetPrivacyOk returns a tuple with the Privacy field value
+// GetPrivacyOk returns a tuple with the Privacy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WishlistCreateWishlistRequest) GetPrivacyOk() (*WishlistPrivacy, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Privacy) {
 		return nil, false
 	}
-	return &o.Privacy, true
+	return o.Privacy, true
 }
 
-// SetPrivacy sets field value
+// HasPrivacy returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) HasPrivacy() bool {
+	if o != nil && !IsNil(o.Privacy) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrivacy gets a reference to the given WishlistPrivacy and assigns it to the Privacy field.
 func (o *WishlistCreateWishlistRequest) SetPrivacy(v WishlistPrivacy) {
-	o.Privacy = v
+	o.Privacy = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -238,8 +251,12 @@ func (o WishlistCreateWishlistRequest) MarshalJSON() ([]byte, error) {
 
 func (o WishlistCreateWishlistRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["tenantId"] = o.TenantId
-	toSerialize["privacy"] = o.Privacy
+	if !IsNil(o.TenantId) {
+		toSerialize["tenantId"] = o.TenantId
+	}
+	if !IsNil(o.Privacy) {
+		toSerialize["privacy"] = o.Privacy
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -253,44 +270,6 @@ func (o WishlistCreateWishlistRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["isDefault"] = o.IsDefault
 	}
 	return toSerialize, nil
-}
-
-func (o *WishlistCreateWishlistRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"tenantId",
-		"privacy",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varWishlistCreateWishlistRequest := _WishlistCreateWishlistRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistCreateWishlistRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WishlistCreateWishlistRequest(varWishlistCreateWishlistRequest)
-
-	return err
 }
 
 type NullableWishlistCreateWishlistRequest struct {

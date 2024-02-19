@@ -6,7 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type**| **string** |   | [optional]
+**TypeUrl**| **string** |   | [optional]
+**Value**| **string** |   | [optional]
 
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
