@@ -1,6 +1,6 @@
 # \WishlistAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://wishlist.api.gogemini.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -42,7 +42,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistAddItemToWishlistRequest() // WishlistAddItemToWishlistRequest | 
+	body := *openapiclient.NewWishlistAddItemToWishlistRequest("TenantId_example", "WishlistId_example", "ItemGrn_example") // WishlistAddItemToWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -106,7 +106,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistAreItemsInWishlistsRequest() // WishlistAreItemsInWishlistsRequest | 
+	body := *openapiclient.NewWishlistAreItemsInWishlistsRequest("TenantId_example", []string{"ItemGrns_example"}) // WishlistAreItemsInWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistBulkRemoveItemsFromWishlistsRequest() // WishlistBulkRemoveItemsFromWishlistsRequest | 
+	body := *openapiclient.NewWishlistBulkRemoveItemsFromWishlistsRequest("TenantId_example", []string{"ItemGrns_example"}) // WishlistBulkRemoveItemsFromWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -362,7 +362,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistCreateWishlistRequest() // WishlistCreateWishlistRequest | 
+	body := *openapiclient.NewWishlistCreateWishlistRequest("TenantId_example", openapiclient.wishlistPrivacy("PRIVACY_UNKNOWN")) // WishlistCreateWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -426,7 +426,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistDeleteWishlistRequest() // WishlistDeleteWishlistRequest | 
+	body := *openapiclient.NewWishlistDeleteWishlistRequest("TenantId_example", "Id_example") // WishlistDeleteWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -490,7 +490,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistGetItemFromWishlistRequest() // WishlistGetItemFromWishlistRequest | 
+	body := *openapiclient.NewWishlistGetItemFromWishlistRequest("TenantId_example", "Id_example") // WishlistGetItemFromWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -554,7 +554,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistGetWishlistByIdRequest() // WishlistGetWishlistByIdRequest | 
+	body := *openapiclient.NewWishlistGetWishlistByIdRequest("TenantId_example", "Id_example") // WishlistGetWishlistByIdRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -618,7 +618,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistGetWishlistBySharedCodeRequest() // WishlistGetWishlistBySharedCodeRequest | 
+	body := *openapiclient.NewWishlistGetWishlistBySharedCodeRequest("TenantId_example", "SharedCode_example") // WishlistGetWishlistBySharedCodeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -651,7 +651,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -682,7 +682,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistListWishlistItemsRequest() // WishlistListWishlistItemsRequest | 
+	body := *openapiclient.NewWishlistListWishlistItemsRequest("TenantId_example", "WishlistId_example") // WishlistListWishlistItemsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -746,7 +746,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistListWishlistsRequest() // WishlistListWishlistsRequest | 
+	body := *openapiclient.NewWishlistListWishlistsRequest("TenantId_example") // WishlistListWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -810,7 +810,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistMergeWishlistsRequest() // WishlistMergeWishlistsRequest | 
+	body := *openapiclient.NewWishlistMergeWishlistsRequest("TenantId_example", "StartingWishlistId_example", "CustomerGrn_example") // WishlistMergeWishlistsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -843,7 +843,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -874,7 +874,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistRemoveItemFromWishlistRequest() // WishlistRemoveItemFromWishlistRequest | 
+	body := *openapiclient.NewWishlistRemoveItemFromWishlistRequest("TenantId_example", "Id_example") // WishlistRemoveItemFromWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -907,7 +907,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -938,7 +938,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistUpdateItemInWishlistRequest() // WishlistUpdateItemInWishlistRequest | 
+	body := *openapiclient.NewWishlistUpdateItemInWishlistRequest("TenantId_example", "Id_example", *openapiclient.NewWishlistUpdateItemInWishlistRequestPayload(), "PayloadMask_example") // WishlistUpdateItemInWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -971,7 +971,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1002,7 +1002,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewWishlistUpdateWishlistRequest() // WishlistUpdateWishlistRequest | 
+	body := *openapiclient.NewWishlistUpdateWishlistRequest("TenantId_example", "Id_example", *openapiclient.NewWishlistUpdateWishlistRequestPayload(), "PayloadMask_example") // WishlistUpdateWishlistRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1035,7 +1035,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

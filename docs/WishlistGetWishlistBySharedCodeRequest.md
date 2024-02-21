@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TenantId**| **string** |   | [optional]
-**SharedCode**| **string** |   | [optional]
+**TenantId**| **string** |   |
+**SharedCode**| **string** |   |
 **CustomerGrn**| **string** | If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.  | [optional]
 
 

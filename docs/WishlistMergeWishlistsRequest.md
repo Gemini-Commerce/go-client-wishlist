@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TenantId**| **string** |   | [optional]
-**StartingWishlistId**| **string** |   | [optional]
-**CustomerGrn**| **string** | If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.  | [optional]
+**TenantId**| **string** |   |
+**StartingWishlistId**| **string** |   |
+**CustomerGrn**| **string** | If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.  |
 **TargetWishlistId**| **string** | The wishlist to merge into the starting wishlist.  | [optional]
 
 

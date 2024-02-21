@@ -1,9 +1,28 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "wishlist/service.proto",
-    "version": "version not set"
+    "title": "Wishlist Service",
+    "description": "API for managing wishlists",
+    "version": "v1",
+    "contact": {
+      "name": "Gemini Team",
+      "email": "info@gemini-commerce.com"
+    },
+    "license": {
+      "name": "Gemini fair use license",
+      "url": "https://gemini-commerce.com/api/fair-use-license"
+    }
   },
+  "tags": [
+    {
+      "name": "Wishlist"
+    }
+  ],
+  "host": "wishlist.api.gogemini.io",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -539,14 +558,11 @@
     "protobufAny": {
       "type": "object",
       "properties": {
-        "typeUrl": {
+        "@type": {
           "type": "string"
-        },
-        "value": {
-          "type": "string",
-          "format": "byte"
         }
-      }
+      },
+      "additionalProperties": {}
     },
     "rpcStatus": {
       "type": "object",
@@ -561,6 +577,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -589,7 +606,12 @@
           "type": "string",
           "title": "The customer adds the item to the wishlist"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "wishlistId",
+        "itemGrn"
+      ]
     },
     "wishlistAreItemsInWishlistsRequest": {
       "type": "object",
@@ -610,7 +632,11 @@
           },
           "title": "Max 500 items per request"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "itemGrns"
+      ]
     },
     "wishlistAreItemsInWishlistsResponse": {
       "type": "object",
@@ -643,6 +669,7 @@
         "sharingRequests": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/wishlistSharingRequest"
           }
         }
@@ -654,6 +681,7 @@
         "sharingResponses": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/wishlistSharingResponse"
           }
         }
@@ -679,7 +707,11 @@
           },
           "description": "Wishlist IDs to remove items from. Max 500 wishlists per request.\nIf not provided, items will be removed from all wishlists."
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "itemGrns"
+      ]
     },
     "wishlistBulkRemoveItemsFromWishlistsResponse": {
       "type": "object"
@@ -724,7 +756,11 @@
           "type": "boolean",
           "title": "If is the first wishlist for the customer, it will be set as default"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "privacy"
+      ]
     },
     "wishlistDeleteWishlistRequest": {
       "type": "object",
@@ -735,7 +771,11 @@
         "id": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "id"
+      ]
     },
     "wishlistDeleteWishlistResponse": {
       "type": "object"
@@ -749,7 +789,11 @@
         "id": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "id"
+      ]
     },
     "wishlistGetWishlistByIdRequest": {
       "type": "object",
@@ -760,7 +804,11 @@
         "id": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "id"
+      ]
     },
     "wishlistGetWishlistBySharedCodeRequest": {
       "type": "object",
@@ -775,7 +823,11 @@
           "type": "string",
           "description": "If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field."
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "sharedCode"
+      ]
     },
     "wishlistListWishlistItemsRequest": {
       "type": "object",
@@ -797,7 +849,11 @@
         "pageToken": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "wishlistId"
+      ]
     },
     "wishlistListWishlistItemsResponse": {
       "type": "object",
@@ -805,6 +861,7 @@
         "wishlistItems": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/wishlistWishlistItemResponse"
           }
         },
@@ -830,12 +887,12 @@
           "$ref": "#/definitions/ListWishlistsRequestFilter"
         },
         "filterMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId"
+      ]
     },
     "wishlistListWishlistsResponse": {
       "type": "object",
@@ -843,6 +900,7 @@
         "wishlist": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/wishlistWishlistResponse"
           }
         },
@@ -879,7 +937,12 @@
           "type": "string",
           "description": "The wishlist to merge into the starting wishlist."
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "startingWishlistId",
+        "customerGrn"
+      ]
     },
     "wishlistPermission": {
       "type": "string",
@@ -909,7 +972,11 @@
         "id": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "id"
+      ]
     },
     "wishlistRemoveItemFromWishlistResponse": {
       "type": "object"
@@ -975,12 +1042,15 @@
           "$ref": "#/definitions/wishlistUpdateItemInWishlistRequestPayload"
         },
         "payloadMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "id",
+        "payload",
+        "payloadMask"
+      ]
     },
     "wishlistUpdateItemInWishlistRequestPayload": {
       "type": "object",
@@ -1011,12 +1081,15 @@
           "$ref": "#/definitions/wishlistUpdateWishlistRequestPayload"
         },
         "payloadMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
-      }
+      },
+      "required": [
+        "tenantId",
+        "id",
+        "payload",
+        "payloadMask"
+      ]
     },
     "wishlistUpdateWishlistRequestPayload": {
       "type": "object",
@@ -1111,5 +1184,23 @@
         }
       }
     }
-  }
+  },
+  "securityDefinitions": {
+    "Authorization": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    },
+    "standardAuthorization": {
+      "type": "oauth2",
+      "name": "Authorization",
+      "in": "header",
+      "flow": "implicit"
+    }
+  },
+  "security": [
+    {
+      "Authorization": []
+    }
+  ]
 }

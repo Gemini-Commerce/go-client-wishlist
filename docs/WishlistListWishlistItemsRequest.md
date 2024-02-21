@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TenantId**| **string** |   | [optional]
-**WishlistId**| **string** |   | [optional]
+**TenantId**| **string** |   |
+**WishlistId**| **string** |   |
 **CustomerGrn**| **string** |   | [optional]
 **PageSize**| **int64** |   | [optional]
 **PageToken**| **string** |   | [optional]
