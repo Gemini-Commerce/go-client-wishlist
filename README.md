@@ -22,7 +22,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import wishlist "github.com/gemini-commerce/go-client-wishlist"
+import wishlist "github.com/Gemini-Commerce/go-client-wishlist"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:

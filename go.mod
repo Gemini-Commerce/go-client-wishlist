@@ -1,4 +1,4 @@
-module github.com/gemini-commerce/go-client-wishlist
+module github.com/Gemini-Commerce/go-client-wishlist
 
 go 1.18
 

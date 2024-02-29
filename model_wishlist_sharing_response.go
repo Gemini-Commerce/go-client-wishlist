@@ -37,7 +37,7 @@ type WishlistSharingResponse struct {
 // will change when the set of required properties is changed
 func NewWishlistSharingResponse() *WishlistSharingResponse {
 	this := WishlistSharingResponse{}
-	var permission WishlistPermission = WISHLISTPERMISSION_UNKNOWN_PERMISSION
+	var permission WishlistPermission = UNKNOWN_PERMISSION
 	this.Permission = &permission
 	return &this
 }
@@ -47,7 +47,7 @@ func NewWishlistSharingResponse() *WishlistSharingResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewWishlistSharingResponseWithDefaults() *WishlistSharingResponse {
 	this := WishlistSharingResponse{}
-	var permission WishlistPermission = WISHLISTPERMISSION_UNKNOWN_PERMISSION
+	var permission WishlistPermission = UNKNOWN_PERMISSION
 	this.Permission = &permission
 	return &this
 }

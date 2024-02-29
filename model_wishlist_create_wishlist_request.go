@@ -49,7 +49,7 @@ func NewWishlistCreateWishlistRequest(tenantId string, privacy WishlistPrivacy) 
 // but it doesn't guarantee that properties required by API are set
 func NewWishlistCreateWishlistRequestWithDefaults() *WishlistCreateWishlistRequest {
 	this := WishlistCreateWishlistRequest{}
-	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
+	var privacy WishlistPrivacy = UNKNOWN
 	this.Privacy = privacy
 	return &this
 }

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **SharingId**| **string** |   | [optional]
 **SharingGrn**| **string** |   | [optional]
 **WishlistId**| **string** |   | [optional]
-**Permission**| [**WishlistPermission**](WishlistPermission.md) |  for more information please, see Model/WishlistPermission.php  | [optional] [default to WISHLISTPERMISSION_UNKNOWN_PERMISSION]
+**Permission**| [**WishlistPermission**](WishlistPermission.md) |  for more information please, see Model/WishlistPermission.php  | [optional] [default to UNKNOWN_PERMISSION]
 **CustomerGrn**| **string** |   | [optional]
 **CustomerAggregationId**| **string** |   | [optional]
 **CreatedAt**| [**time.Time**](time.Time.md) |   | [optional]

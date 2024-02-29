@@ -40,7 +40,7 @@ type WishlistWishlistResponse struct {
 // will change when the set of required properties is changed
 func NewWishlistWishlistResponse() *WishlistWishlistResponse {
 	this := WishlistWishlistResponse{}
-	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
+	var privacy WishlistPrivacy = UNKNOWN
 	this.Privacy = &privacy
 	return &this
 }
@@ -50,7 +50,7 @@ func NewWishlistWishlistResponse() *WishlistWishlistResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewWishlistWishlistResponseWithDefaults() *WishlistWishlistResponse {
 	this := WishlistWishlistResponse{}
-	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
+	var privacy WishlistPrivacy = UNKNOWN
 	this.Privacy = &privacy
 	return &this
 }

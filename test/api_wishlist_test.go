@@ -1,5 +1,5 @@
 /*
-wishlist/service.proto
+Wishlist Service
 
 Testing WishlistAPIService
 
@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/gemini-commerce/go-client-wishlist"
+	openapiclient "github.com/Gemini-Commerce/go-client-wishlist"
 )
 
 func Test_wishlist_WishlistAPIService(t *testing.T) {

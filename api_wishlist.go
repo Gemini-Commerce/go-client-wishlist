@@ -23,18 +23,18 @@ import (
 // WishlistAPIService WishlistAPI service
 type WishlistAPIService service
 
-type WishlistAPIWishlistAddItemToWishlistRequest struct {
+type ApiWishlistAddItemToWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistAddItemToWishlistRequest
 }
 
-func (r WishlistAPIWishlistAddItemToWishlistRequest) Body(body WishlistAddItemToWishlistRequest) WishlistAPIWishlistAddItemToWishlistRequest {
+func (r ApiWishlistAddItemToWishlistRequest) Body(body WishlistAddItemToWishlistRequest) ApiWishlistAddItemToWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistAddItemToWishlistRequest) Execute() (*WishlistWishlistItemResponse, *http.Response, error) {
+func (r ApiWishlistAddItemToWishlistRequest) Execute() (*WishlistWishlistItemResponse, *http.Response, error) {
 	return r.ApiService.WishlistAddItemToWishlistExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r WishlistAPIWishlistAddItemToWishlistRequest) Execute() (*WishlistWishlis
 WishlistAddItemToWishlist Method for WishlistAddItemToWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistAddItemToWishlistRequest
+ @return ApiWishlistAddItemToWishlistRequest
 */
-func (a *WishlistAPIService) WishlistAddItemToWishlist(ctx context.Context) WishlistAPIWishlistAddItemToWishlistRequest {
-	return WishlistAPIWishlistAddItemToWishlistRequest{
+func (a *WishlistAPIService) WishlistAddItemToWishlist(ctx context.Context) ApiWishlistAddItemToWishlistRequest {
+	return ApiWishlistAddItemToWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *WishlistAPIService) WishlistAddItemToWishlist(ctx context.Context) Wish
 
 // Execute executes the request
 //  @return WishlistWishlistItemResponse
-func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r WishlistAPIWishlistAddItemToWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r ApiWishlistAddItemToWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -153,18 +153,18 @@ func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r WishlistAPIWishl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistAreItemsInWishlistsRequest struct {
+type ApiWishlistAreItemsInWishlistsRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistAreItemsInWishlistsRequest
 }
 
-func (r WishlistAPIWishlistAreItemsInWishlistsRequest) Body(body WishlistAreItemsInWishlistsRequest) WishlistAPIWishlistAreItemsInWishlistsRequest {
+func (r ApiWishlistAreItemsInWishlistsRequest) Body(body WishlistAreItemsInWishlistsRequest) ApiWishlistAreItemsInWishlistsRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistAreItemsInWishlistsRequest) Execute() (*WishlistAreItemsInWishlistsResponse, *http.Response, error) {
+func (r ApiWishlistAreItemsInWishlistsRequest) Execute() (*WishlistAreItemsInWishlistsResponse, *http.Response, error) {
 	return r.ApiService.WishlistAreItemsInWishlistsExecute(r)
 }
 
@@ -172,10 +172,10 @@ func (r WishlistAPIWishlistAreItemsInWishlistsRequest) Execute() (*WishlistAreIt
 WishlistAreItemsInWishlists Method for WishlistAreItemsInWishlists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistAreItemsInWishlistsRequest
+ @return ApiWishlistAreItemsInWishlistsRequest
 */
-func (a *WishlistAPIService) WishlistAreItemsInWishlists(ctx context.Context) WishlistAPIWishlistAreItemsInWishlistsRequest {
-	return WishlistAPIWishlistAreItemsInWishlistsRequest{
+func (a *WishlistAPIService) WishlistAreItemsInWishlists(ctx context.Context) ApiWishlistAreItemsInWishlistsRequest {
+	return ApiWishlistAreItemsInWishlistsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -183,7 +183,7 @@ func (a *WishlistAPIService) WishlistAreItemsInWishlists(ctx context.Context) Wi
 
 // Execute executes the request
 //  @return WishlistAreItemsInWishlistsResponse
-func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r WishlistAPIWishlistAreItemsInWishlistsRequest) (*WishlistAreItemsInWishlistsResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r ApiWishlistAreItemsInWishlistsRequest) (*WishlistAreItemsInWishlistsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -283,18 +283,18 @@ func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r WishlistAPIWis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistBulkCreateSharingRequest struct {
+type ApiWishlistBulkCreateSharingRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistBulkCreateSharingRequest
 }
 
-func (r WishlistAPIWishlistBulkCreateSharingRequest) Body(body WishlistBulkCreateSharingRequest) WishlistAPIWishlistBulkCreateSharingRequest {
+func (r ApiWishlistBulkCreateSharingRequest) Body(body WishlistBulkCreateSharingRequest) ApiWishlistBulkCreateSharingRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistBulkCreateSharingRequest) Execute() (*WishlistBulkCreateSharingResponse, *http.Response, error) {
+func (r ApiWishlistBulkCreateSharingRequest) Execute() (*WishlistBulkCreateSharingResponse, *http.Response, error) {
 	return r.ApiService.WishlistBulkCreateSharingExecute(r)
 }
 
@@ -302,10 +302,10 @@ func (r WishlistAPIWishlistBulkCreateSharingRequest) Execute() (*WishlistBulkCre
 WishlistBulkCreateSharing Sharing endpoints
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistBulkCreateSharingRequest
+ @return ApiWishlistBulkCreateSharingRequest
 */
-func (a *WishlistAPIService) WishlistBulkCreateSharing(ctx context.Context) WishlistAPIWishlistBulkCreateSharingRequest {
-	return WishlistAPIWishlistBulkCreateSharingRequest{
+func (a *WishlistAPIService) WishlistBulkCreateSharing(ctx context.Context) ApiWishlistBulkCreateSharingRequest {
+	return ApiWishlistBulkCreateSharingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -313,7 +313,7 @@ func (a *WishlistAPIService) WishlistBulkCreateSharing(ctx context.Context) Wish
 
 // Execute executes the request
 //  @return WishlistBulkCreateSharingResponse
-func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r WishlistAPIWishlistBulkCreateSharingRequest) (*WishlistBulkCreateSharingResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r ApiWishlistBulkCreateSharingRequest) (*WishlistBulkCreateSharingResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -413,18 +413,18 @@ func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r WishlistAPIWishl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest struct {
+type ApiWishlistBulkRemoveItemsFromWishlistsRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistBulkRemoveItemsFromWishlistsRequest
 }
 
-func (r WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest) Body(body WishlistBulkRemoveItemsFromWishlistsRequest) WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest {
+func (r ApiWishlistBulkRemoveItemsFromWishlistsRequest) Body(body WishlistBulkRemoveItemsFromWishlistsRequest) ApiWishlistBulkRemoveItemsFromWishlistsRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiWishlistBulkRemoveItemsFromWishlistsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.WishlistBulkRemoveItemsFromWishlistsExecute(r)
 }
 
@@ -432,10 +432,10 @@ func (r WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest) Execute() (map[s
 WishlistBulkRemoveItemsFromWishlists BulkRemoveItemsFromWishlists removes items from wishlists.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest
+ @return ApiWishlistBulkRemoveItemsFromWishlistsRequest
 */
-func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlists(ctx context.Context) WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest {
-	return WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest{
+func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlists(ctx context.Context) ApiWishlistBulkRemoveItemsFromWishlistsRequest {
+	return ApiWishlistBulkRemoveItemsFromWishlistsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -443,7 +443,7 @@ func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlists(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r WishlistAPIWishlistBulkRemoveItemsFromWishlistsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r ApiWishlistBulkRemoveItemsFromWishlistsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -543,18 +543,18 @@ func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r Wishl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistBulkRevokeSharingRequest struct {
+type ApiWishlistBulkRevokeSharingRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistBulkRevokeSharingRequest
 }
 
-func (r WishlistAPIWishlistBulkRevokeSharingRequest) Body(body WishlistBulkRevokeSharingRequest) WishlistAPIWishlistBulkRevokeSharingRequest {
+func (r ApiWishlistBulkRevokeSharingRequest) Body(body WishlistBulkRevokeSharingRequest) ApiWishlistBulkRevokeSharingRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistBulkRevokeSharingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiWishlistBulkRevokeSharingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.WishlistBulkRevokeSharingExecute(r)
 }
 
@@ -562,10 +562,10 @@ func (r WishlistAPIWishlistBulkRevokeSharingRequest) Execute() (map[string]inter
 WishlistBulkRevokeSharing Method for WishlistBulkRevokeSharing
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistBulkRevokeSharingRequest
+ @return ApiWishlistBulkRevokeSharingRequest
 */
-func (a *WishlistAPIService) WishlistBulkRevokeSharing(ctx context.Context) WishlistAPIWishlistBulkRevokeSharingRequest {
-	return WishlistAPIWishlistBulkRevokeSharingRequest{
+func (a *WishlistAPIService) WishlistBulkRevokeSharing(ctx context.Context) ApiWishlistBulkRevokeSharingRequest {
+	return ApiWishlistBulkRevokeSharingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -573,7 +573,7 @@ func (a *WishlistAPIService) WishlistBulkRevokeSharing(ctx context.Context) Wish
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r WishlistAPIWishlistBulkRevokeSharingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r ApiWishlistBulkRevokeSharingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -673,18 +673,18 @@ func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r WishlistAPIWishl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistCreateWishlistRequest struct {
+type ApiWishlistCreateWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistCreateWishlistRequest
 }
 
-func (r WishlistAPIWishlistCreateWishlistRequest) Body(body WishlistCreateWishlistRequest) WishlistAPIWishlistCreateWishlistRequest {
+func (r ApiWishlistCreateWishlistRequest) Body(body WishlistCreateWishlistRequest) ApiWishlistCreateWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistCreateWishlistRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
+func (r ApiWishlistCreateWishlistRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
 	return r.ApiService.WishlistCreateWishlistExecute(r)
 }
 
@@ -692,10 +692,10 @@ func (r WishlistAPIWishlistCreateWishlistRequest) Execute() (*WishlistWishlistRe
 WishlistCreateWishlist Method for WishlistCreateWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistCreateWishlistRequest
+ @return ApiWishlistCreateWishlistRequest
 */
-func (a *WishlistAPIService) WishlistCreateWishlist(ctx context.Context) WishlistAPIWishlistCreateWishlistRequest {
-	return WishlistAPIWishlistCreateWishlistRequest{
+func (a *WishlistAPIService) WishlistCreateWishlist(ctx context.Context) ApiWishlistCreateWishlistRequest {
+	return ApiWishlistCreateWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -703,7 +703,7 @@ func (a *WishlistAPIService) WishlistCreateWishlist(ctx context.Context) Wishlis
 
 // Execute executes the request
 //  @return WishlistWishlistResponse
-func (a *WishlistAPIService) WishlistCreateWishlistExecute(r WishlistAPIWishlistCreateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistCreateWishlistExecute(r ApiWishlistCreateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -803,18 +803,18 @@ func (a *WishlistAPIService) WishlistCreateWishlistExecute(r WishlistAPIWishlist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistDeleteWishlistRequest struct {
+type ApiWishlistDeleteWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistDeleteWishlistRequest
 }
 
-func (r WishlistAPIWishlistDeleteWishlistRequest) Body(body WishlistDeleteWishlistRequest) WishlistAPIWishlistDeleteWishlistRequest {
+func (r ApiWishlistDeleteWishlistRequest) Body(body WishlistDeleteWishlistRequest) ApiWishlistDeleteWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistDeleteWishlistRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiWishlistDeleteWishlistRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.WishlistDeleteWishlistExecute(r)
 }
 
@@ -822,10 +822,10 @@ func (r WishlistAPIWishlistDeleteWishlistRequest) Execute() (map[string]interfac
 WishlistDeleteWishlist Method for WishlistDeleteWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistDeleteWishlistRequest
+ @return ApiWishlistDeleteWishlistRequest
 */
-func (a *WishlistAPIService) WishlistDeleteWishlist(ctx context.Context) WishlistAPIWishlistDeleteWishlistRequest {
-	return WishlistAPIWishlistDeleteWishlistRequest{
+func (a *WishlistAPIService) WishlistDeleteWishlist(ctx context.Context) ApiWishlistDeleteWishlistRequest {
+	return ApiWishlistDeleteWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -833,7 +833,7 @@ func (a *WishlistAPIService) WishlistDeleteWishlist(ctx context.Context) Wishlis
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r WishlistAPIWishlistDeleteWishlistRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r ApiWishlistDeleteWishlistRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -933,18 +933,18 @@ func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r WishlistAPIWishlist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistGetItemFromWishlistRequest struct {
+type ApiWishlistGetItemFromWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistGetItemFromWishlistRequest
 }
 
-func (r WishlistAPIWishlistGetItemFromWishlistRequest) Body(body WishlistGetItemFromWishlistRequest) WishlistAPIWishlistGetItemFromWishlistRequest {
+func (r ApiWishlistGetItemFromWishlistRequest) Body(body WishlistGetItemFromWishlistRequest) ApiWishlistGetItemFromWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistGetItemFromWishlistRequest) Execute() (*WishlistWishlistItemResponse, *http.Response, error) {
+func (r ApiWishlistGetItemFromWishlistRequest) Execute() (*WishlistWishlistItemResponse, *http.Response, error) {
 	return r.ApiService.WishlistGetItemFromWishlistExecute(r)
 }
 
@@ -952,10 +952,10 @@ func (r WishlistAPIWishlistGetItemFromWishlistRequest) Execute() (*WishlistWishl
 WishlistGetItemFromWishlist Method for WishlistGetItemFromWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistGetItemFromWishlistRequest
+ @return ApiWishlistGetItemFromWishlistRequest
 */
-func (a *WishlistAPIService) WishlistGetItemFromWishlist(ctx context.Context) WishlistAPIWishlistGetItemFromWishlistRequest {
-	return WishlistAPIWishlistGetItemFromWishlistRequest{
+func (a *WishlistAPIService) WishlistGetItemFromWishlist(ctx context.Context) ApiWishlistGetItemFromWishlistRequest {
+	return ApiWishlistGetItemFromWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -963,7 +963,7 @@ func (a *WishlistAPIService) WishlistGetItemFromWishlist(ctx context.Context) Wi
 
 // Execute executes the request
 //  @return WishlistWishlistItemResponse
-func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r WishlistAPIWishlistGetItemFromWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r ApiWishlistGetItemFromWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1063,18 +1063,18 @@ func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r WishlistAPIWis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistGetWishlistByIdRequest struct {
+type ApiWishlistGetWishlistByIdRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistGetWishlistByIdRequest
 }
 
-func (r WishlistAPIWishlistGetWishlistByIdRequest) Body(body WishlistGetWishlistByIdRequest) WishlistAPIWishlistGetWishlistByIdRequest {
+func (r ApiWishlistGetWishlistByIdRequest) Body(body WishlistGetWishlistByIdRequest) ApiWishlistGetWishlistByIdRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistGetWishlistByIdRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
+func (r ApiWishlistGetWishlistByIdRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
 	return r.ApiService.WishlistGetWishlistByIdExecute(r)
 }
 
@@ -1082,10 +1082,10 @@ func (r WishlistAPIWishlistGetWishlistByIdRequest) Execute() (*WishlistWishlistR
 WishlistGetWishlistById Method for WishlistGetWishlistById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistGetWishlistByIdRequest
+ @return ApiWishlistGetWishlistByIdRequest
 */
-func (a *WishlistAPIService) WishlistGetWishlistById(ctx context.Context) WishlistAPIWishlistGetWishlistByIdRequest {
-	return WishlistAPIWishlistGetWishlistByIdRequest{
+func (a *WishlistAPIService) WishlistGetWishlistById(ctx context.Context) ApiWishlistGetWishlistByIdRequest {
+	return ApiWishlistGetWishlistByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1093,7 +1093,7 @@ func (a *WishlistAPIService) WishlistGetWishlistById(ctx context.Context) Wishli
 
 // Execute executes the request
 //  @return WishlistWishlistResponse
-func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r WishlistAPIWishlistGetWishlistByIdRequest) (*WishlistWishlistResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r ApiWishlistGetWishlistByIdRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1193,18 +1193,18 @@ func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r WishlistAPIWishlis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistGetWishlistBySharedCodeRequest struct {
+type ApiWishlistGetWishlistBySharedCodeRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistGetWishlistBySharedCodeRequest
 }
 
-func (r WishlistAPIWishlistGetWishlistBySharedCodeRequest) Body(body WishlistGetWishlistBySharedCodeRequest) WishlistAPIWishlistGetWishlistBySharedCodeRequest {
+func (r ApiWishlistGetWishlistBySharedCodeRequest) Body(body WishlistGetWishlistBySharedCodeRequest) ApiWishlistGetWishlistBySharedCodeRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistGetWishlistBySharedCodeRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
+func (r ApiWishlistGetWishlistBySharedCodeRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
 	return r.ApiService.WishlistGetWishlistBySharedCodeExecute(r)
 }
 
@@ -1212,10 +1212,10 @@ func (r WishlistAPIWishlistGetWishlistBySharedCodeRequest) Execute() (*WishlistW
 WishlistGetWishlistBySharedCode Method for WishlistGetWishlistBySharedCode
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistGetWishlistBySharedCodeRequest
+ @return ApiWishlistGetWishlistBySharedCodeRequest
 */
-func (a *WishlistAPIService) WishlistGetWishlistBySharedCode(ctx context.Context) WishlistAPIWishlistGetWishlistBySharedCodeRequest {
-	return WishlistAPIWishlistGetWishlistBySharedCodeRequest{
+func (a *WishlistAPIService) WishlistGetWishlistBySharedCode(ctx context.Context) ApiWishlistGetWishlistBySharedCodeRequest {
+	return ApiWishlistGetWishlistBySharedCodeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1223,7 +1223,7 @@ func (a *WishlistAPIService) WishlistGetWishlistBySharedCode(ctx context.Context
 
 // Execute executes the request
 //  @return WishlistWishlistResponse
-func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r WishlistAPIWishlistGetWishlistBySharedCodeRequest) (*WishlistWishlistResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r ApiWishlistGetWishlistBySharedCodeRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1323,18 +1323,18 @@ func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r WishlistAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistListWishlistItemsRequest struct {
+type ApiWishlistListWishlistItemsRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistListWishlistItemsRequest
 }
 
-func (r WishlistAPIWishlistListWishlistItemsRequest) Body(body WishlistListWishlistItemsRequest) WishlistAPIWishlistListWishlistItemsRequest {
+func (r ApiWishlistListWishlistItemsRequest) Body(body WishlistListWishlistItemsRequest) ApiWishlistListWishlistItemsRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistListWishlistItemsRequest) Execute() (*WishlistListWishlistItemsResponse, *http.Response, error) {
+func (r ApiWishlistListWishlistItemsRequest) Execute() (*WishlistListWishlistItemsResponse, *http.Response, error) {
 	return r.ApiService.WishlistListWishlistItemsExecute(r)
 }
 
@@ -1342,10 +1342,10 @@ func (r WishlistAPIWishlistListWishlistItemsRequest) Execute() (*WishlistListWis
 WishlistListWishlistItems Method for WishlistListWishlistItems
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistListWishlistItemsRequest
+ @return ApiWishlistListWishlistItemsRequest
 */
-func (a *WishlistAPIService) WishlistListWishlistItems(ctx context.Context) WishlistAPIWishlistListWishlistItemsRequest {
-	return WishlistAPIWishlistListWishlistItemsRequest{
+func (a *WishlistAPIService) WishlistListWishlistItems(ctx context.Context) ApiWishlistListWishlistItemsRequest {
+	return ApiWishlistListWishlistItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1353,7 +1353,7 @@ func (a *WishlistAPIService) WishlistListWishlistItems(ctx context.Context) Wish
 
 // Execute executes the request
 //  @return WishlistListWishlistItemsResponse
-func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r WishlistAPIWishlistListWishlistItemsRequest) (*WishlistListWishlistItemsResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r ApiWishlistListWishlistItemsRequest) (*WishlistListWishlistItemsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1453,18 +1453,18 @@ func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r WishlistAPIWishl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistListWishlistsRequest struct {
+type ApiWishlistListWishlistsRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistListWishlistsRequest
 }
 
-func (r WishlistAPIWishlistListWishlistsRequest) Body(body WishlistListWishlistsRequest) WishlistAPIWishlistListWishlistsRequest {
+func (r ApiWishlistListWishlistsRequest) Body(body WishlistListWishlistsRequest) ApiWishlistListWishlistsRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistListWishlistsRequest) Execute() (*WishlistListWishlistsResponse, *http.Response, error) {
+func (r ApiWishlistListWishlistsRequest) Execute() (*WishlistListWishlistsResponse, *http.Response, error) {
 	return r.ApiService.WishlistListWishlistsExecute(r)
 }
 
@@ -1472,10 +1472,10 @@ func (r WishlistAPIWishlistListWishlistsRequest) Execute() (*WishlistListWishlis
 WishlistListWishlists Method for WishlistListWishlists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistListWishlistsRequest
+ @return ApiWishlistListWishlistsRequest
 */
-func (a *WishlistAPIService) WishlistListWishlists(ctx context.Context) WishlistAPIWishlistListWishlistsRequest {
-	return WishlistAPIWishlistListWishlistsRequest{
+func (a *WishlistAPIService) WishlistListWishlists(ctx context.Context) ApiWishlistListWishlistsRequest {
+	return ApiWishlistListWishlistsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1483,7 +1483,7 @@ func (a *WishlistAPIService) WishlistListWishlists(ctx context.Context) Wishlist
 
 // Execute executes the request
 //  @return WishlistListWishlistsResponse
-func (a *WishlistAPIService) WishlistListWishlistsExecute(r WishlistAPIWishlistListWishlistsRequest) (*WishlistListWishlistsResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistListWishlistsExecute(r ApiWishlistListWishlistsRequest) (*WishlistListWishlistsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1583,18 +1583,18 @@ func (a *WishlistAPIService) WishlistListWishlistsExecute(r WishlistAPIWishlistL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistMergeWishlistsRequest struct {
+type ApiWishlistMergeWishlistsRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistMergeWishlistsRequest
 }
 
-func (r WishlistAPIWishlistMergeWishlistsRequest) Body(body WishlistMergeWishlistsRequest) WishlistAPIWishlistMergeWishlistsRequest {
+func (r ApiWishlistMergeWishlistsRequest) Body(body WishlistMergeWishlistsRequest) ApiWishlistMergeWishlistsRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistMergeWishlistsRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
+func (r ApiWishlistMergeWishlistsRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
 	return r.ApiService.WishlistMergeWishlistsExecute(r)
 }
 
@@ -1602,10 +1602,10 @@ func (r WishlistAPIWishlistMergeWishlistsRequest) Execute() (*WishlistWishlistRe
 WishlistMergeWishlists Method for WishlistMergeWishlists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistMergeWishlistsRequest
+ @return ApiWishlistMergeWishlistsRequest
 */
-func (a *WishlistAPIService) WishlistMergeWishlists(ctx context.Context) WishlistAPIWishlistMergeWishlistsRequest {
-	return WishlistAPIWishlistMergeWishlistsRequest{
+func (a *WishlistAPIService) WishlistMergeWishlists(ctx context.Context) ApiWishlistMergeWishlistsRequest {
+	return ApiWishlistMergeWishlistsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1613,7 +1613,7 @@ func (a *WishlistAPIService) WishlistMergeWishlists(ctx context.Context) Wishlis
 
 // Execute executes the request
 //  @return WishlistWishlistResponse
-func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r WishlistAPIWishlistMergeWishlistsRequest) (*WishlistWishlistResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r ApiWishlistMergeWishlistsRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1713,18 +1713,18 @@ func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r WishlistAPIWishlist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistRemoveItemFromWishlistRequest struct {
+type ApiWishlistRemoveItemFromWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistRemoveItemFromWishlistRequest
 }
 
-func (r WishlistAPIWishlistRemoveItemFromWishlistRequest) Body(body WishlistRemoveItemFromWishlistRequest) WishlistAPIWishlistRemoveItemFromWishlistRequest {
+func (r ApiWishlistRemoveItemFromWishlistRequest) Body(body WishlistRemoveItemFromWishlistRequest) ApiWishlistRemoveItemFromWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistRemoveItemFromWishlistRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiWishlistRemoveItemFromWishlistRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.WishlistRemoveItemFromWishlistExecute(r)
 }
 
@@ -1732,10 +1732,10 @@ func (r WishlistAPIWishlistRemoveItemFromWishlistRequest) Execute() (map[string]
 WishlistRemoveItemFromWishlist Method for WishlistRemoveItemFromWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistRemoveItemFromWishlistRequest
+ @return ApiWishlistRemoveItemFromWishlistRequest
 */
-func (a *WishlistAPIService) WishlistRemoveItemFromWishlist(ctx context.Context) WishlistAPIWishlistRemoveItemFromWishlistRequest {
-	return WishlistAPIWishlistRemoveItemFromWishlistRequest{
+func (a *WishlistAPIService) WishlistRemoveItemFromWishlist(ctx context.Context) ApiWishlistRemoveItemFromWishlistRequest {
+	return ApiWishlistRemoveItemFromWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1743,7 +1743,7 @@ func (a *WishlistAPIService) WishlistRemoveItemFromWishlist(ctx context.Context)
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r WishlistAPIWishlistRemoveItemFromWishlistRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r ApiWishlistRemoveItemFromWishlistRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1843,18 +1843,18 @@ func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r WishlistAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistUpdateItemInWishlistRequest struct {
+type ApiWishlistUpdateItemInWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistUpdateItemInWishlistRequest
 }
 
-func (r WishlistAPIWishlistUpdateItemInWishlistRequest) Body(body WishlistUpdateItemInWishlistRequest) WishlistAPIWishlistUpdateItemInWishlistRequest {
+func (r ApiWishlistUpdateItemInWishlistRequest) Body(body WishlistUpdateItemInWishlistRequest) ApiWishlistUpdateItemInWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistUpdateItemInWishlistRequest) Execute() (*WishlistWishlistItemResponse, *http.Response, error) {
+func (r ApiWishlistUpdateItemInWishlistRequest) Execute() (*WishlistWishlistItemResponse, *http.Response, error) {
 	return r.ApiService.WishlistUpdateItemInWishlistExecute(r)
 }
 
@@ -1862,10 +1862,10 @@ func (r WishlistAPIWishlistUpdateItemInWishlistRequest) Execute() (*WishlistWish
 WishlistUpdateItemInWishlist Method for WishlistUpdateItemInWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistUpdateItemInWishlistRequest
+ @return ApiWishlistUpdateItemInWishlistRequest
 */
-func (a *WishlistAPIService) WishlistUpdateItemInWishlist(ctx context.Context) WishlistAPIWishlistUpdateItemInWishlistRequest {
-	return WishlistAPIWishlistUpdateItemInWishlistRequest{
+func (a *WishlistAPIService) WishlistUpdateItemInWishlist(ctx context.Context) ApiWishlistUpdateItemInWishlistRequest {
+	return ApiWishlistUpdateItemInWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1873,7 +1873,7 @@ func (a *WishlistAPIService) WishlistUpdateItemInWishlist(ctx context.Context) W
 
 // Execute executes the request
 //  @return WishlistWishlistItemResponse
-func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r WishlistAPIWishlistUpdateItemInWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r ApiWishlistUpdateItemInWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1973,18 +1973,18 @@ func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r WishlistAPIWi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WishlistAPIWishlistUpdateWishlistRequest struct {
+type ApiWishlistUpdateWishlistRequest struct {
 	ctx context.Context
 	ApiService *WishlistAPIService
 	body *WishlistUpdateWishlistRequest
 }
 
-func (r WishlistAPIWishlistUpdateWishlistRequest) Body(body WishlistUpdateWishlistRequest) WishlistAPIWishlistUpdateWishlistRequest {
+func (r ApiWishlistUpdateWishlistRequest) Body(body WishlistUpdateWishlistRequest) ApiWishlistUpdateWishlistRequest {
 	r.body = &body
 	return r
 }
 
-func (r WishlistAPIWishlistUpdateWishlistRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
+func (r ApiWishlistUpdateWishlistRequest) Execute() (*WishlistWishlistResponse, *http.Response, error) {
 	return r.ApiService.WishlistUpdateWishlistExecute(r)
 }
 
@@ -1992,10 +1992,10 @@ func (r WishlistAPIWishlistUpdateWishlistRequest) Execute() (*WishlistWishlistRe
 WishlistUpdateWishlist Method for WishlistUpdateWishlist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WishlistAPIWishlistUpdateWishlistRequest
+ @return ApiWishlistUpdateWishlistRequest
 */
-func (a *WishlistAPIService) WishlistUpdateWishlist(ctx context.Context) WishlistAPIWishlistUpdateWishlistRequest {
-	return WishlistAPIWishlistUpdateWishlistRequest{
+func (a *WishlistAPIService) WishlistUpdateWishlist(ctx context.Context) ApiWishlistUpdateWishlistRequest {
+	return ApiWishlistUpdateWishlistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2003,7 +2003,7 @@ func (a *WishlistAPIService) WishlistUpdateWishlist(ctx context.Context) Wishlis
 
 // Execute executes the request
 //  @return WishlistWishlistResponse
-func (a *WishlistAPIService) WishlistUpdateWishlistExecute(r WishlistAPIWishlistUpdateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error) {
+func (a *WishlistAPIService) WishlistUpdateWishlistExecute(r ApiWishlistUpdateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
