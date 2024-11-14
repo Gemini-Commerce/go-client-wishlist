@@ -430,11 +430,19 @@ components:
     protobufAny:
       additionalProperties:
         type: object
+      example:
+        '@type': '@type'
       properties:
         '@type':
           type: string
       type: object
     rpcStatus:
+      example:
+        code: 0
+        details:
+        - '@type': '@type'
+        - '@type': '@type'
+        message: message
       properties:
         code:
           format: int32
@@ -521,7 +529,7 @@ components:
         - createdAt: 2000-01-23T04:56:07.000+00:00
           customerGrn: customerGrn
           sharingGrn: sharingGrn
-          permission: null
+          permission: UNKNOWN_PERMISSION
           customerAggregationId: customerAggregationId
           wishlistId: wishlistId
           sharingId: sharingId
@@ -529,7 +537,7 @@ components:
         - createdAt: 2000-01-23T04:56:07.000+00:00
           customerGrn: customerGrn
           sharingGrn: sharingGrn
-          permission: null
+          permission: UNKNOWN_PERMISSION
           customerAggregationId: customerAggregationId
           wishlistId: wishlistId
           sharingId: sharingId
@@ -716,7 +724,7 @@ components:
           grn: grn
           isDefault: true
           customerGrn: customerGrn
-          privacy: null
+          privacy: PRIVACY_UNKNOWN
           description:
             value:
               key: value
@@ -731,7 +739,7 @@ components:
           grn: grn
           isDefault: true
           customerGrn: customerGrn
-          privacy: null
+          privacy: PRIVACY_UNKNOWN
           description:
             value:
               key: value
@@ -822,7 +830,7 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         customerGrn: customerGrn
         sharingGrn: sharingGrn
-        permission: null
+        permission: UNKNOWN_PERMISSION
         customerAggregationId: customerAggregationId
         wishlistId: wishlistId
         sharingId: sharingId
@@ -943,7 +951,7 @@ components:
         grn: grn
         isDefault: true
         customerGrn: customerGrn
-        privacy: null
+        privacy: PRIVACY_UNKNOWN
         description:
           value:
             key: value

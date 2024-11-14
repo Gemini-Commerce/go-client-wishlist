@@ -24,7 +24,10 @@ type WishlistSharingRequest struct {
 	Permission *WishlistPermission `json:"permission,omitempty"`
 	CustomerGrn *string `json:"customerGrn,omitempty"`
 	CustomerAggregationId *string `json:"customerAggregationId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistSharingRequest WishlistSharingRequest
 
 // NewWishlistSharingRequest instantiates a new WishlistSharingRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -32,7 +35,7 @@ type WishlistSharingRequest struct {
 // will change when the set of required properties is changed
 func NewWishlistSharingRequest() *WishlistSharingRequest {
 	this := WishlistSharingRequest{}
-	var permission WishlistPermission = UNKNOWN_PERMISSION
+	var permission WishlistPermission = WISHLISTPERMISSION_UNKNOWN_PERMISSION
 	this.Permission = &permission
 	return &this
 }
@@ -42,7 +45,7 @@ func NewWishlistSharingRequest() *WishlistSharingRequest {
 // but it doesn't guarantee that properties required by API are set
 func NewWishlistSharingRequestWithDefaults() *WishlistSharingRequest {
 	this := WishlistSharingRequest{}
-	var permission WishlistPermission = UNKNOWN_PERMISSION
+	var permission WishlistPermission = WISHLISTPERMISSION_UNKNOWN_PERMISSION
 	this.Permission = &permission
 	return &this
 }
@@ -65,8 +68,8 @@ func (o *WishlistSharingRequest) GetWishlistIdOk() (*string, bool) {
 	return o.WishlistId, true
 }
 
-// HasWishlistId returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) HasWishlistId() bool {
+// &#39;Has&#39;WishlistId returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) &#39;Has&#39;WishlistId() bool {
 	if o != nil && !IsNil(o.WishlistId) {
 		return true
 	}
@@ -97,8 +100,8 @@ func (o *WishlistSharingRequest) GetPermissionOk() (*WishlistPermission, bool) {
 	return o.Permission, true
 }
 
-// HasPermission returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) HasPermission() bool {
+// &#39;Has&#39;Permission returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) &#39;Has&#39;Permission() bool {
 	if o != nil && !IsNil(o.Permission) {
 		return true
 	}
@@ -129,8 +132,8 @@ func (o *WishlistSharingRequest) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -161,8 +164,8 @@ func (o *WishlistSharingRequest) GetCustomerAggregationIdOk() (*string, bool) {
 	return o.CustomerAggregationId, true
 }
 
-// HasCustomerAggregationId returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) HasCustomerAggregationId() bool {
+// &#39;Has&#39;CustomerAggregationId returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) &#39;Has&#39;CustomerAggregationId() bool {
 	if o != nil && !IsNil(o.CustomerAggregationId) {
 		return true
 	}
@@ -197,9 +200,56 @@ func (o WishlistSharingRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomerAggregationId) {
 		toSerialize["customerAggregationId"] = o.CustomerAggregationId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistSharingRequest) UnmarshalJSON(data []byte) (err error) {
+	varWishlistSharingRequest := _WishlistSharingRequest{}
+
+	err = json.Unmarshal(data, &varWishlistSharingRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistSharingRequest(varWishlistSharingRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "wishlistId")
+		delete(additionalProperties, "permission")
+		delete(additionalProperties, "customerGrn")
+		delete(additionalProperties, "customerAggregationId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistSharingRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistSharingRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistSharingRequest struct {
 	value *WishlistSharingRequest
 	isSet bool

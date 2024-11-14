@@ -21,9 +21,9 @@ type WishlistPermission string
 
 // List of wishlistPermission
 const (
-	UNKNOWN_PERMISSION WishlistPermission = "UNKNOWN_PERMISSION"
-	VIEW_PERMISSION WishlistPermission = "VIEW_PERMISSION"
-	EDIT_PERMISSION WishlistPermission = "EDIT_PERMISSION"
+	WISHLISTPERMISSION_UNKNOWN_PERMISSION WishlistPermission = "UNKNOWN_PERMISSION"
+	WISHLISTPERMISSION_VIEW_PERMISSION WishlistPermission = "VIEW_PERMISSION"
+	WISHLISTPERMISSION_EDIT_PERMISSION WishlistPermission = "EDIT_PERMISSION"
 )
 
 // All allowed values of WishlistPermission enum

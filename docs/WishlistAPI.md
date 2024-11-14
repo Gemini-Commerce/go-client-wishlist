@@ -1,4 +1,4 @@
-# GeminiCommerce\Wishlist\WishlistAPI
+# \WishlistAPI
 
 All URIs are relative to *https://wishlist.api.gogemini.io*
 

@@ -23,7 +23,10 @@ type WishlistUpdateItemInWishlistRequestPayload struct {
 	PreferredQuantity *string `json:"preferredQuantity,omitempty"`
 	Description *WishlistLocalizedText `json:"description,omitempty"`
 	CustomerGrn *string `json:"customerGrn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistUpdateItemInWishlistRequestPayload WishlistUpdateItemInWishlistRequestPayload
 
 // NewWishlistUpdateItemInWishlistRequestPayload instantiates a new WishlistUpdateItemInWishlistRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) GetPreferredQuantityOk() (*
 	return o.PreferredQuantity, true
 }
 
-// HasPreferredQuantity returns a boolean if a field has been set.
-func (o *WishlistUpdateItemInWishlistRequestPayload) HasPreferredQuantity() bool {
+// &#39;Has&#39;PreferredQuantity returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequestPayload) &#39;Has&#39;PreferredQuantity() bool {
 	if o != nil && !IsNil(o.PreferredQuantity) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) GetDescriptionOk() (*Wishli
 	return o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *WishlistUpdateItemInWishlistRequestPayload) HasDescription() bool {
+// &#39;Has&#39;Description returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequestPayload) &#39;Has&#39;Description() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) GetCustomerGrnOk() (*string
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistUpdateItemInWishlistRequestPayload) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequestPayload) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o WishlistUpdateItemInWishlistRequestPayload) ToMap() (map[string]interfac
 	if !IsNil(o.CustomerGrn) {
 		toSerialize["customerGrn"] = o.CustomerGrn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistUpdateItemInWishlistRequestPayload) UnmarshalJSON(data []byte) (err error) {
+	varWishlistUpdateItemInWishlistRequestPayload := _WishlistUpdateItemInWishlistRequestPayload{}
+
+	err = json.Unmarshal(data, &varWishlistUpdateItemInWishlistRequestPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistUpdateItemInWishlistRequestPayload(varWishlistUpdateItemInWishlistRequestPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "preferredQuantity")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "customerGrn")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistUpdateItemInWishlistRequestPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistUpdateItemInWishlistRequestPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistUpdateItemInWishlistRequestPayload struct {
 	value *WishlistUpdateItemInWishlistRequestPayload
 	isSet bool

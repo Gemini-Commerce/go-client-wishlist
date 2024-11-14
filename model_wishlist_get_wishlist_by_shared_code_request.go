@@ -13,7 +13,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type WishlistGetWishlistBySharedCodeRequest struct {
 	SharedCode string `json:"sharedCode"`
 	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
 	CustomerGrn *string `json:"customerGrn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WishlistGetWishlistBySharedCodeRequest WishlistGetWishlistBySharedCodeRequest
@@ -115,8 +115,8 @@ func (o *WishlistGetWishlistBySharedCodeRequest) GetCustomerGrnOk() (*string, bo
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistGetWishlistBySharedCodeRequest) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *WishlistGetWishlistBySharedCodeRequest) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -144,6 +144,11 @@ func (o WishlistGetWishlistBySharedCodeRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.CustomerGrn) {
 		toSerialize["customerGrn"] = o.CustomerGrn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -172,9 +177,7 @@ func (o *WishlistGetWishlistBySharedCodeRequest) UnmarshalJSON(data []byte) (err
 
 	varWishlistGetWishlistBySharedCodeRequest := _WishlistGetWishlistBySharedCodeRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistGetWishlistBySharedCodeRequest)
+	err = json.Unmarshal(data, &varWishlistGetWishlistBySharedCodeRequest)
 
 	if err != nil {
 		return err
@@ -182,9 +185,36 @@ func (o *WishlistGetWishlistBySharedCodeRequest) UnmarshalJSON(data []byte) (err
 
 	*o = WishlistGetWishlistBySharedCodeRequest(varWishlistGetWishlistBySharedCodeRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "sharedCode")
+		delete(additionalProperties, "customerGrn")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *WishlistGetWishlistBySharedCodeRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistGetWishlistBySharedCodeRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistGetWishlistBySharedCodeRequest struct {
 	value *WishlistGetWishlistBySharedCodeRequest
 	isSet bool

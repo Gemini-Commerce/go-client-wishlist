@@ -21,10 +21,10 @@ type WishlistPrivacy string
 
 // List of wishlistPrivacy
 const (
-	UNKNOWN WishlistPrivacy = "PRIVACY_UNKNOWN"
-	PUBLIC WishlistPrivacy = "PRIVACY_PUBLIC"
-	PRIVATE WishlistPrivacy = "PRIVACY_PRIVATE"
-	SHARED WishlistPrivacy = "PRIVACY_SHARED"
+	WISHLISTPRIVACY_UNKNOWN WishlistPrivacy = "PRIVACY_UNKNOWN"
+	WISHLISTPRIVACY_PUBLIC WishlistPrivacy = "PRIVACY_PUBLIC"
+	WISHLISTPRIVACY_PRIVATE WishlistPrivacy = "PRIVACY_PRIVATE"
+	WISHLISTPRIVACY_SHARED WishlistPrivacy = "PRIVACY_SHARED"
 )
 
 // All allowed values of WishlistPrivacy enum

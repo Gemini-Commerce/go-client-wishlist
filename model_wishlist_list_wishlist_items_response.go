@@ -22,7 +22,10 @@ var _ MappedNullable = &WishlistListWishlistItemsResponse{}
 type WishlistListWishlistItemsResponse struct {
 	WishlistItems []WishlistWishlistItemResponse `json:"wishlistItems,omitempty"`
 	NextPageToken *string `json:"nextPageToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistListWishlistItemsResponse WishlistListWishlistItemsResponse
 
 // NewWishlistListWishlistItemsResponse instantiates a new WishlistListWishlistItemsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *WishlistListWishlistItemsResponse) GetWishlistItemsOk() ([]WishlistWish
 	return o.WishlistItems, true
 }
 
-// HasWishlistItems returns a boolean if a field has been set.
-func (o *WishlistListWishlistItemsResponse) HasWishlistItems() bool {
+// &#39;Has&#39;WishlistItems returns a boolean if a field has been set.
+func (o *WishlistListWishlistItemsResponse) &#39;Has&#39;WishlistItems() bool {
 	if o != nil && !IsNil(o.WishlistItems) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *WishlistListWishlistItemsResponse) GetNextPageTokenOk() (*string, bool)
 	return o.NextPageToken, true
 }
 
-// HasNextPageToken returns a boolean if a field has been set.
-func (o *WishlistListWishlistItemsResponse) HasNextPageToken() bool {
+// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
+func (o *WishlistListWishlistItemsResponse) &#39;Has&#39;NextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o WishlistListWishlistItemsResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.NextPageToken) {
 		toSerialize["nextPageToken"] = o.NextPageToken
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistListWishlistItemsResponse) UnmarshalJSON(data []byte) (err error) {
+	varWishlistListWishlistItemsResponse := _WishlistListWishlistItemsResponse{}
+
+	err = json.Unmarshal(data, &varWishlistListWishlistItemsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistListWishlistItemsResponse(varWishlistListWishlistItemsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "wishlistItems")
+		delete(additionalProperties, "nextPageToken")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistListWishlistItemsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistListWishlistItemsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistListWishlistItemsResponse struct {
 	value *WishlistListWishlistItemsResponse
 	isSet bool

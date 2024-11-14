@@ -13,7 +13,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type WishlistMergeWishlistsRequest struct {
 	CustomerGrn string `json:"customerGrn"`
 	// The wishlist to merge into the starting wishlist.
 	TargetWishlistId *string `json:"targetWishlistId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WishlistMergeWishlistsRequest WishlistMergeWishlistsRequest
@@ -142,8 +142,8 @@ func (o *WishlistMergeWishlistsRequest) GetTargetWishlistIdOk() (*string, bool) 
 	return o.TargetWishlistId, true
 }
 
-// HasTargetWishlistId returns a boolean if a field has been set.
-func (o *WishlistMergeWishlistsRequest) HasTargetWishlistId() bool {
+// &#39;Has&#39;TargetWishlistId returns a boolean if a field has been set.
+func (o *WishlistMergeWishlistsRequest) &#39;Has&#39;TargetWishlistId() bool {
 	if o != nil && !IsNil(o.TargetWishlistId) {
 		return true
 	}
@@ -172,6 +172,11 @@ func (o WishlistMergeWishlistsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TargetWishlistId) {
 		toSerialize["targetWishlistId"] = o.TargetWishlistId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -201,9 +206,7 @@ func (o *WishlistMergeWishlistsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varWishlistMergeWishlistsRequest := _WishlistMergeWishlistsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistMergeWishlistsRequest)
+	err = json.Unmarshal(data, &varWishlistMergeWishlistsRequest)
 
 	if err != nil {
 		return err
@@ -211,9 +214,37 @@ func (o *WishlistMergeWishlistsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = WishlistMergeWishlistsRequest(varWishlistMergeWishlistsRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "startingWishlistId")
+		delete(additionalProperties, "customerGrn")
+		delete(additionalProperties, "targetWishlistId")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *WishlistMergeWishlistsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistMergeWishlistsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistMergeWishlistsRequest struct {
 	value *WishlistMergeWishlistsRequest
 	isSet bool

@@ -22,7 +22,10 @@ var _ MappedNullable = &WishlistBulkRevokeSharingRequest{}
 type WishlistBulkRevokeSharingRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	SharingIds []string `json:"sharingIds,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistBulkRevokeSharingRequest WishlistBulkRevokeSharingRequest
 
 // NewWishlistBulkRevokeSharingRequest instantiates a new WishlistBulkRevokeSharingRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *WishlistBulkRevokeSharingRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *WishlistBulkRevokeSharingRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *WishlistBulkRevokeSharingRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *WishlistBulkRevokeSharingRequest) GetSharingIdsOk() ([]string, bool) {
 	return o.SharingIds, true
 }
 
-// HasSharingIds returns a boolean if a field has been set.
-func (o *WishlistBulkRevokeSharingRequest) HasSharingIds() bool {
+// &#39;Has&#39;SharingIds returns a boolean if a field has been set.
+func (o *WishlistBulkRevokeSharingRequest) &#39;Has&#39;SharingIds() bool {
 	if o != nil && !IsNil(o.SharingIds) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o WishlistBulkRevokeSharingRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.SharingIds) {
 		toSerialize["sharingIds"] = o.SharingIds
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistBulkRevokeSharingRequest) UnmarshalJSON(data []byte) (err error) {
+	varWishlistBulkRevokeSharingRequest := _WishlistBulkRevokeSharingRequest{}
+
+	err = json.Unmarshal(data, &varWishlistBulkRevokeSharingRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistBulkRevokeSharingRequest(varWishlistBulkRevokeSharingRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "sharingIds")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistBulkRevokeSharingRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistBulkRevokeSharingRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistBulkRevokeSharingRequest struct {
 	value *WishlistBulkRevokeSharingRequest
 	isSet bool

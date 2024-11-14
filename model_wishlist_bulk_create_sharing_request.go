@@ -22,7 +22,10 @@ var _ MappedNullable = &WishlistBulkCreateSharingRequest{}
 type WishlistBulkCreateSharingRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	SharingRequests []WishlistSharingRequest `json:"sharingRequests,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistBulkCreateSharingRequest WishlistBulkCreateSharingRequest
 
 // NewWishlistBulkCreateSharingRequest instantiates a new WishlistBulkCreateSharingRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *WishlistBulkCreateSharingRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *WishlistBulkCreateSharingRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *WishlistBulkCreateSharingRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *WishlistBulkCreateSharingRequest) GetSharingRequestsOk() ([]WishlistSha
 	return o.SharingRequests, true
 }
 
-// HasSharingRequests returns a boolean if a field has been set.
-func (o *WishlistBulkCreateSharingRequest) HasSharingRequests() bool {
+// &#39;Has&#39;SharingRequests returns a boolean if a field has been set.
+func (o *WishlistBulkCreateSharingRequest) &#39;Has&#39;SharingRequests() bool {
 	if o != nil && !IsNil(o.SharingRequests) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o WishlistBulkCreateSharingRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.SharingRequests) {
 		toSerialize["sharingRequests"] = o.SharingRequests
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistBulkCreateSharingRequest) UnmarshalJSON(data []byte) (err error) {
+	varWishlistBulkCreateSharingRequest := _WishlistBulkCreateSharingRequest{}
+
+	err = json.Unmarshal(data, &varWishlistBulkCreateSharingRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistBulkCreateSharingRequest(varWishlistBulkCreateSharingRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "sharingRequests")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistBulkCreateSharingRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistBulkCreateSharingRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistBulkCreateSharingRequest struct {
 	value *WishlistBulkCreateSharingRequest
 	isSet bool

@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Privacy**| [**WishlistPrivacy**](WishlistPrivacy.md) |  for more information please, see Model/WishlistPrivacy.php  | [optional] [default to UNKNOWN]
+**Privacy**| [**WishlistPrivacy**](WishlistPrivacy.md) |  for more information please, see Model/WishlistPrivacy.php  | [optional] [default to WISHLISTPRIVACY_UNKNOWN]
 **Label**| [**WishlistLocalizedText**](WishlistLocalizedText.md) |   | [optional]
 **Description**| [**WishlistLocalizedText**](WishlistLocalizedText.md) |   | [optional]
 **IsDefault**| **bool** |   | [optional]

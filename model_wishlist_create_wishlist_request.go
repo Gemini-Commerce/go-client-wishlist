@@ -13,7 +13,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type WishlistCreateWishlistRequest struct {
 	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
 	CustomerGrn *string `json:"customerGrn,omitempty"`
 	IsDefault *bool `json:"isDefault,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WishlistCreateWishlistRequest WishlistCreateWishlistRequest
@@ -49,7 +49,7 @@ func NewWishlistCreateWishlistRequest(tenantId string, privacy WishlistPrivacy) 
 // but it doesn't guarantee that properties required by API are set
 func NewWishlistCreateWishlistRequestWithDefaults() *WishlistCreateWishlistRequest {
 	this := WishlistCreateWishlistRequest{}
-	var privacy WishlistPrivacy = UNKNOWN
+	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
 	this.Privacy = privacy
 	return &this
 }
@@ -120,8 +120,8 @@ func (o *WishlistCreateWishlistRequest) GetLabelOk() (*WishlistLocalizedText, bo
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -152,8 +152,8 @@ func (o *WishlistCreateWishlistRequest) GetDescriptionOk() (*WishlistLocalizedTe
 	return o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) HasDescription() bool {
+// &#39;Has&#39;Description returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) &#39;Has&#39;Description() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -184,8 +184,8 @@ func (o *WishlistCreateWishlistRequest) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -216,8 +216,8 @@ func (o *WishlistCreateWishlistRequest) GetIsDefaultOk() (*bool, bool) {
 	return o.IsDefault, true
 }
 
-// HasIsDefault returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) HasIsDefault() bool {
+// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) &#39;Has&#39;IsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -254,6 +254,11 @@ func (o WishlistCreateWishlistRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsDefault) {
 		toSerialize["isDefault"] = o.IsDefault
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -282,9 +287,7 @@ func (o *WishlistCreateWishlistRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varWishlistCreateWishlistRequest := _WishlistCreateWishlistRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistCreateWishlistRequest)
+	err = json.Unmarshal(data, &varWishlistCreateWishlistRequest)
 
 	if err != nil {
 		return err
@@ -292,9 +295,39 @@ func (o *WishlistCreateWishlistRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = WishlistCreateWishlistRequest(varWishlistCreateWishlistRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "privacy")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "customerGrn")
+		delete(additionalProperties, "isDefault")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *WishlistCreateWishlistRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistCreateWishlistRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistCreateWishlistRequest struct {
 	value *WishlistCreateWishlistRequest
 	isSet bool

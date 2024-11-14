@@ -22,7 +22,10 @@ var _ MappedNullable = &ListWishlistsRequestFilter{}
 type ListWishlistsRequestFilter struct {
 	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
 	CustomerGrn *string `json:"customerGrn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWishlistsRequestFilter ListWishlistsRequestFilter
 
 // NewListWishlistsRequestFilter instantiates a new ListWishlistsRequestFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *ListWishlistsRequestFilter) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *ListWishlistsRequestFilter) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *ListWishlistsRequestFilter) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -86,9 +89,53 @@ func (o ListWishlistsRequestFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomerGrn) {
 		toSerialize["customerGrn"] = o.CustomerGrn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ListWishlistsRequestFilter) UnmarshalJSON(data []byte) (err error) {
+	varListWishlistsRequestFilter := _ListWishlistsRequestFilter{}
+
+	err = json.Unmarshal(data, &varListWishlistsRequestFilter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWishlistsRequestFilter(varListWishlistsRequestFilter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "customerGrn")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ListWishlistsRequestFilter) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ListWishlistsRequestFilter) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableListWishlistsRequestFilter struct {
 	value *ListWishlistsRequestFilter
 	isSet bool

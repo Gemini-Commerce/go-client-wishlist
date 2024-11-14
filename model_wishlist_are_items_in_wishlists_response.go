@@ -21,7 +21,10 @@ var _ MappedNullable = &WishlistAreItemsInWishlistsResponse{}
 // WishlistAreItemsInWishlistsResponse struct for WishlistAreItemsInWishlistsResponse
 type WishlistAreItemsInWishlistsResponse struct {
 	ItemGrnMap *map[string]WishlistAreItemsInWishlistsResponsePayload `json:"itemGrnMap,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistAreItemsInWishlistsResponse WishlistAreItemsInWishlistsResponse
 
 // NewWishlistAreItemsInWishlistsResponse instantiates a new WishlistAreItemsInWishlistsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *WishlistAreItemsInWishlistsResponse) GetItemGrnMapOk() (*map[string]Wis
 	return o.ItemGrnMap, true
 }
 
-// HasItemGrnMap returns a boolean if a field has been set.
-func (o *WishlistAreItemsInWishlistsResponse) HasItemGrnMap() bool {
+// &#39;Has&#39;ItemGrnMap returns a boolean if a field has been set.
+func (o *WishlistAreItemsInWishlistsResponse) &#39;Has&#39;ItemGrnMap() bool {
 	if o != nil && !IsNil(o.ItemGrnMap) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o WishlistAreItemsInWishlistsResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.ItemGrnMap) {
 		toSerialize["itemGrnMap"] = o.ItemGrnMap
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistAreItemsInWishlistsResponse) UnmarshalJSON(data []byte) (err error) {
+	varWishlistAreItemsInWishlistsResponse := _WishlistAreItemsInWishlistsResponse{}
+
+	err = json.Unmarshal(data, &varWishlistAreItemsInWishlistsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistAreItemsInWishlistsResponse(varWishlistAreItemsInWishlistsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "itemGrnMap")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistAreItemsInWishlistsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistAreItemsInWishlistsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistAreItemsInWishlistsResponse struct {
 	value *WishlistAreItemsInWishlistsResponse
 	isSet bool

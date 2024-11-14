@@ -13,7 +13,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type WishlistListWishlistsRequest struct {
 	PageToken *string `json:"pageToken,omitempty"`
 	Filter *ListWishlistsRequestFilter `json:"filter,omitempty"`
 	FilterMask *string `json:"filterMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WishlistListWishlistsRequest WishlistListWishlistsRequest
@@ -91,8 +91,8 @@ func (o *WishlistListWishlistsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// HasPageSize returns a boolean if a field has been set.
-func (o *WishlistListWishlistsRequest) HasPageSize() bool {
+// &#39;Has&#39;PageSize returns a boolean if a field has been set.
+func (o *WishlistListWishlistsRequest) &#39;Has&#39;PageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -123,8 +123,8 @@ func (o *WishlistListWishlistsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// HasPageToken returns a boolean if a field has been set.
-func (o *WishlistListWishlistsRequest) HasPageToken() bool {
+// &#39;Has&#39;PageToken returns a boolean if a field has been set.
+func (o *WishlistListWishlistsRequest) &#39;Has&#39;PageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -155,8 +155,8 @@ func (o *WishlistListWishlistsRequest) GetFilterOk() (*ListWishlistsRequestFilte
 	return o.Filter, true
 }
 
-// HasFilter returns a boolean if a field has been set.
-func (o *WishlistListWishlistsRequest) HasFilter() bool {
+// &#39;Has&#39;Filter returns a boolean if a field has been set.
+func (o *WishlistListWishlistsRequest) &#39;Has&#39;Filter() bool {
 	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
@@ -187,8 +187,8 @@ func (o *WishlistListWishlistsRequest) GetFilterMaskOk() (*string, bool) {
 	return o.FilterMask, true
 }
 
-// HasFilterMask returns a boolean if a field has been set.
-func (o *WishlistListWishlistsRequest) HasFilterMask() bool {
+// &#39;Has&#39;FilterMask returns a boolean if a field has been set.
+func (o *WishlistListWishlistsRequest) &#39;Has&#39;FilterMask() bool {
 	if o != nil && !IsNil(o.FilterMask) {
 		return true
 	}
@@ -224,6 +224,11 @@ func (o WishlistListWishlistsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.FilterMask) {
 		toSerialize["filterMask"] = o.FilterMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -251,9 +256,7 @@ func (o *WishlistListWishlistsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varWishlistListWishlistsRequest := _WishlistListWishlistsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistListWishlistsRequest)
+	err = json.Unmarshal(data, &varWishlistListWishlistsRequest)
 
 	if err != nil {
 		return err
@@ -261,9 +264,38 @@ func (o *WishlistListWishlistsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = WishlistListWishlistsRequest(varWishlistListWishlistsRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "pageSize")
+		delete(additionalProperties, "pageToken")
+		delete(additionalProperties, "filter")
+		delete(additionalProperties, "filterMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *WishlistListWishlistsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistListWishlistsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistListWishlistsRequest struct {
 	value *WishlistListWishlistsRequest
 	isSet bool

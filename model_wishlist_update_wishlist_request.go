@@ -13,7 +13,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type WishlistUpdateWishlistRequest struct {
 	Id string `json:"id"`
 	Payload WishlistUpdateWishlistRequestPayload `json:"payload"`
 	PayloadMask string `json:"payloadMask"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WishlistUpdateWishlistRequest WishlistUpdateWishlistRequest
@@ -161,6 +161,11 @@ func (o WishlistUpdateWishlistRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["id"] = o.Id
 	toSerialize["payload"] = o.Payload
 	toSerialize["payloadMask"] = o.PayloadMask
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -191,9 +196,7 @@ func (o *WishlistUpdateWishlistRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varWishlistUpdateWishlistRequest := _WishlistUpdateWishlistRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistUpdateWishlistRequest)
+	err = json.Unmarshal(data, &varWishlistUpdateWishlistRequest)
 
 	if err != nil {
 		return err
@@ -201,9 +204,37 @@ func (o *WishlistUpdateWishlistRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = WishlistUpdateWishlistRequest(varWishlistUpdateWishlistRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "payloadMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *WishlistUpdateWishlistRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistUpdateWishlistRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistUpdateWishlistRequest struct {
 	value *WishlistUpdateWishlistRequest
 	isSet bool

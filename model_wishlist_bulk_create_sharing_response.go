@@ -21,7 +21,10 @@ var _ MappedNullable = &WishlistBulkCreateSharingResponse{}
 // WishlistBulkCreateSharingResponse struct for WishlistBulkCreateSharingResponse
 type WishlistBulkCreateSharingResponse struct {
 	SharingResponses []WishlistSharingResponse `json:"sharingResponses,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistBulkCreateSharingResponse WishlistBulkCreateSharingResponse
 
 // NewWishlistBulkCreateSharingResponse instantiates a new WishlistBulkCreateSharingResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *WishlistBulkCreateSharingResponse) GetSharingResponsesOk() ([]WishlistS
 	return o.SharingResponses, true
 }
 
-// HasSharingResponses returns a boolean if a field has been set.
-func (o *WishlistBulkCreateSharingResponse) HasSharingResponses() bool {
+// &#39;Has&#39;SharingResponses returns a boolean if a field has been set.
+func (o *WishlistBulkCreateSharingResponse) &#39;Has&#39;SharingResponses() bool {
 	if o != nil && !IsNil(o.SharingResponses) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o WishlistBulkCreateSharingResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.SharingResponses) {
 		toSerialize["sharingResponses"] = o.SharingResponses
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistBulkCreateSharingResponse) UnmarshalJSON(data []byte) (err error) {
+	varWishlistBulkCreateSharingResponse := _WishlistBulkCreateSharingResponse{}
+
+	err = json.Unmarshal(data, &varWishlistBulkCreateSharingResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistBulkCreateSharingResponse(varWishlistBulkCreateSharingResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sharingResponses")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistBulkCreateSharingResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistBulkCreateSharingResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistBulkCreateSharingResponse struct {
 	value *WishlistBulkCreateSharingResponse
 	isSet bool

@@ -13,7 +13,6 @@ package wishlist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type WishlistAddItemToWishlistRequest struct {
 	PreferredQuantity *string `json:"preferredQuantity,omitempty"`
 	Description *WishlistLocalizedText `json:"description,omitempty"`
 	CustomerGrn *string `json:"customerGrn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WishlistAddItemToWishlistRequest WishlistAddItemToWishlistRequest
@@ -142,8 +142,8 @@ func (o *WishlistAddItemToWishlistRequest) GetPreferredQuantityOk() (*string, bo
 	return o.PreferredQuantity, true
 }
 
-// HasPreferredQuantity returns a boolean if a field has been set.
-func (o *WishlistAddItemToWishlistRequest) HasPreferredQuantity() bool {
+// &#39;Has&#39;PreferredQuantity returns a boolean if a field has been set.
+func (o *WishlistAddItemToWishlistRequest) &#39;Has&#39;PreferredQuantity() bool {
 	if o != nil && !IsNil(o.PreferredQuantity) {
 		return true
 	}
@@ -174,8 +174,8 @@ func (o *WishlistAddItemToWishlistRequest) GetDescriptionOk() (*WishlistLocalize
 	return o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *WishlistAddItemToWishlistRequest) HasDescription() bool {
+// &#39;Has&#39;Description returns a boolean if a field has been set.
+func (o *WishlistAddItemToWishlistRequest) &#39;Has&#39;Description() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -206,8 +206,8 @@ func (o *WishlistAddItemToWishlistRequest) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistAddItemToWishlistRequest) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *WishlistAddItemToWishlistRequest) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -242,6 +242,11 @@ func (o WishlistAddItemToWishlistRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.CustomerGrn) {
 		toSerialize["customerGrn"] = o.CustomerGrn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -271,9 +276,7 @@ func (o *WishlistAddItemToWishlistRequest) UnmarshalJSON(data []byte) (err error
 
 	varWishlistAddItemToWishlistRequest := _WishlistAddItemToWishlistRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWishlistAddItemToWishlistRequest)
+	err = json.Unmarshal(data, &varWishlistAddItemToWishlistRequest)
 
 	if err != nil {
 		return err
@@ -281,9 +284,39 @@ func (o *WishlistAddItemToWishlistRequest) UnmarshalJSON(data []byte) (err error
 
 	*o = WishlistAddItemToWishlistRequest(varWishlistAddItemToWishlistRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "wishlistId")
+		delete(additionalProperties, "itemGrn")
+		delete(additionalProperties, "preferredQuantity")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "customerGrn")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *WishlistAddItemToWishlistRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistAddItemToWishlistRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistAddItemToWishlistRequest struct {
 	value *WishlistAddItemToWishlistRequest
 	isSet bool

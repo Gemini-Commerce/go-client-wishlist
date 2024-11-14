@@ -32,7 +32,10 @@ type WishlistWishlistResponse struct {
 	ItemsCount *string `json:"itemsCount,omitempty"`
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WishlistWishlistResponse WishlistWishlistResponse
 
 // NewWishlistWishlistResponse instantiates a new WishlistWishlistResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -40,7 +43,7 @@ type WishlistWishlistResponse struct {
 // will change when the set of required properties is changed
 func NewWishlistWishlistResponse() *WishlistWishlistResponse {
 	this := WishlistWishlistResponse{}
-	var privacy WishlistPrivacy = UNKNOWN
+	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
 	this.Privacy = &privacy
 	return &this
 }
@@ -50,7 +53,7 @@ func NewWishlistWishlistResponse() *WishlistWishlistResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewWishlistWishlistResponseWithDefaults() *WishlistWishlistResponse {
 	this := WishlistWishlistResponse{}
-	var privacy WishlistPrivacy = UNKNOWN
+	var privacy WishlistPrivacy = WISHLISTPRIVACY_UNKNOWN
 	this.Privacy = &privacy
 	return &this
 }
@@ -73,8 +76,8 @@ func (o *WishlistWishlistResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -105,8 +108,8 @@ func (o *WishlistWishlistResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -137,8 +140,8 @@ func (o *WishlistWishlistResponse) GetSharedCodeOk() (*string, bool) {
 	return o.SharedCode, true
 }
 
-// HasSharedCode returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasSharedCode() bool {
+// &#39;Has&#39;SharedCode returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;SharedCode() bool {
 	if o != nil && !IsNil(o.SharedCode) {
 		return true
 	}
@@ -169,8 +172,8 @@ func (o *WishlistWishlistResponse) GetPrivacyOk() (*WishlistPrivacy, bool) {
 	return o.Privacy, true
 }
 
-// HasPrivacy returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasPrivacy() bool {
+// &#39;Has&#39;Privacy returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;Privacy() bool {
 	if o != nil && !IsNil(o.Privacy) {
 		return true
 	}
@@ -201,8 +204,8 @@ func (o *WishlistWishlistResponse) GetLabelOk() (*WishlistLocalizedText, bool) {
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -233,8 +236,8 @@ func (o *WishlistWishlistResponse) GetDescriptionOk() (*WishlistLocalizedText, b
 	return o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasDescription() bool {
+// &#39;Has&#39;Description returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;Description() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -265,8 +268,8 @@ func (o *WishlistWishlistResponse) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// HasCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasCustomerGrn() bool {
+// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;CustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -297,8 +300,8 @@ func (o *WishlistWishlistResponse) GetIsDefaultOk() (*bool, bool) {
 	return o.IsDefault, true
 }
 
-// HasIsDefault returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasIsDefault() bool {
+// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;IsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -329,8 +332,8 @@ func (o *WishlistWishlistResponse) GetItemsCountOk() (*string, bool) {
 	return o.ItemsCount, true
 }
 
-// HasItemsCount returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasItemsCount() bool {
+// &#39;Has&#39;ItemsCount returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;ItemsCount() bool {
 	if o != nil && !IsNil(o.ItemsCount) {
 		return true
 	}
@@ -361,8 +364,8 @@ func (o *WishlistWishlistResponse) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -393,8 +396,8 @@ func (o *WishlistWishlistResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) HasUpdatedAt() bool {
+// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) &#39;Has&#39;UpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -450,9 +453,63 @@ func (o WishlistWishlistResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updatedAt"] = o.UpdatedAt
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *WishlistWishlistResponse) UnmarshalJSON(data []byte) (err error) {
+	varWishlistWishlistResponse := _WishlistWishlistResponse{}
+
+	err = json.Unmarshal(data, &varWishlistWishlistResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WishlistWishlistResponse(varWishlistWishlistResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "sharedCode")
+		delete(additionalProperties, "privacy")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "customerGrn")
+		delete(additionalProperties, "isDefault")
+		delete(additionalProperties, "itemsCount")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *WishlistWishlistResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *WishlistWishlistResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableWishlistWishlistResponse struct {
 	value *WishlistWishlistResponse
 	isSet bool

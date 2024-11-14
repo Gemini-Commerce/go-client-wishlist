@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Id**| **string** |   | [optional]
 **Grn**| **string** |   | [optional]
 **SharedCode**| **string** |   | [optional]
-**Privacy**| [**WishlistPrivacy**](WishlistPrivacy.md) |  for more information please, see Model/WishlistPrivacy.php  | [optional] [default to UNKNOWN]
+**Privacy**| [**WishlistPrivacy**](WishlistPrivacy.md) |  for more information please, see Model/WishlistPrivacy.php  | [optional] [default to WISHLISTPRIVACY_UNKNOWN]
 **Label**| [**WishlistLocalizedText**](WishlistLocalizedText.md) |   | [optional]
 **Description**| [**WishlistLocalizedText**](WishlistLocalizedText.md) |   | [optional]
 **CustomerGrn**| **string** |   | [optional]
