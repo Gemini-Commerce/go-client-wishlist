@@ -91,8 +91,8 @@ func (o *WishlistAreItemsInWishlistsRequest) GetWishlistIdOk() (*string, bool) {
 	return o.WishlistId, true
 }
 
-// &#39;Has&#39;WishlistId returns a boolean if a field has been set.
-func (o *WishlistAreItemsInWishlistsRequest) &#39;Has&#39;WishlistId() bool {
+// HasWishlistId returns a boolean if a field has been set.
+func (o *WishlistAreItemsInWishlistsRequest) HasWishlistId() bool {
 	if o != nil && !IsNil(o.WishlistId) {
 		return true
 	}
@@ -123,8 +123,8 @@ func (o *WishlistAreItemsInWishlistsRequest) GetCustomerGrnOk() (*string, bool) 
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistAreItemsInWishlistsRequest) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistAreItemsInWishlistsRequest) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}

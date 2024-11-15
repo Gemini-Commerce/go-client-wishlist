@@ -61,8 +61,8 @@ func (o *WishlistAreItemsInWishlistsResponse) GetItemGrnMapOk() (*map[string]Wis
 	return o.ItemGrnMap, true
 }
 
-// &#39;Has&#39;ItemGrnMap returns a boolean if a field has been set.
-func (o *WishlistAreItemsInWishlistsResponse) &#39;Has&#39;ItemGrnMap() bool {
+// HasItemGrnMap returns a boolean if a field has been set.
+func (o *WishlistAreItemsInWishlistsResponse) HasItemGrnMap() bool {
 	if o != nil && !IsNil(o.ItemGrnMap) {
 		return true
 	}

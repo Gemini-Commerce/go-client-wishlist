@@ -68,8 +68,8 @@ func (o *WishlistSharingRequest) GetWishlistIdOk() (*string, bool) {
 	return o.WishlistId, true
 }
 
-// &#39;Has&#39;WishlistId returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) &#39;Has&#39;WishlistId() bool {
+// HasWishlistId returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) HasWishlistId() bool {
 	if o != nil && !IsNil(o.WishlistId) {
 		return true
 	}
@@ -100,8 +100,8 @@ func (o *WishlistSharingRequest) GetPermissionOk() (*WishlistPermission, bool) {
 	return o.Permission, true
 }
 
-// &#39;Has&#39;Permission returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) &#39;Has&#39;Permission() bool {
+// HasPermission returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) HasPermission() bool {
 	if o != nil && !IsNil(o.Permission) {
 		return true
 	}
@@ -132,8 +132,8 @@ func (o *WishlistSharingRequest) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -164,8 +164,8 @@ func (o *WishlistSharingRequest) GetCustomerAggregationIdOk() (*string, bool) {
 	return o.CustomerAggregationId, true
 }
 
-// &#39;Has&#39;CustomerAggregationId returns a boolean if a field has been set.
-func (o *WishlistSharingRequest) &#39;Has&#39;CustomerAggregationId() bool {
+// HasCustomerAggregationId returns a boolean if a field has been set.
+func (o *WishlistSharingRequest) HasCustomerAggregationId() bool {
 	if o != nil && !IsNil(o.CustomerAggregationId) {
 		return true
 	}

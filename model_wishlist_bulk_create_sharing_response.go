@@ -61,8 +61,8 @@ func (o *WishlistBulkCreateSharingResponse) GetSharingResponsesOk() ([]WishlistS
 	return o.SharingResponses, true
 }
 
-// &#39;Has&#39;SharingResponses returns a boolean if a field has been set.
-func (o *WishlistBulkCreateSharingResponse) &#39;Has&#39;SharingResponses() bool {
+// HasSharingResponses returns a boolean if a field has been set.
+func (o *WishlistBulkCreateSharingResponse) HasSharingResponses() bool {
 	if o != nil && !IsNil(o.SharingResponses) {
 		return true
 	}

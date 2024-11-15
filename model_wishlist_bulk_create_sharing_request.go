@@ -62,8 +62,8 @@ func (o *WishlistBulkCreateSharingRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *WishlistBulkCreateSharingRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *WishlistBulkCreateSharingRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *WishlistBulkCreateSharingRequest) GetSharingRequestsOk() ([]WishlistSha
 	return o.SharingRequests, true
 }
 
-// &#39;Has&#39;SharingRequests returns a boolean if a field has been set.
-func (o *WishlistBulkCreateSharingRequest) &#39;Has&#39;SharingRequests() bool {
+// HasSharingRequests returns a boolean if a field has been set.
+func (o *WishlistBulkCreateSharingRequest) HasSharingRequests() bool {
 	if o != nil && !IsNil(o.SharingRequests) {
 		return true
 	}

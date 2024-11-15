@@ -62,8 +62,8 @@ func (o *WishlistListWishlistsResponse) GetWishlistOk() ([]WishlistWishlistRespo
 	return o.Wishlist, true
 }
 
-// &#39;Has&#39;Wishlist returns a boolean if a field has been set.
-func (o *WishlistListWishlistsResponse) &#39;Has&#39;Wishlist() bool {
+// HasWishlist returns a boolean if a field has been set.
+func (o *WishlistListWishlistsResponse) HasWishlist() bool {
 	if o != nil && !IsNil(o.Wishlist) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *WishlistListWishlistsResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
-func (o *WishlistListWishlistsResponse) &#39;Has&#39;NextPageToken() bool {
+// HasNextPageToken returns a boolean if a field has been set.
+func (o *WishlistListWishlistsResponse) HasNextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}

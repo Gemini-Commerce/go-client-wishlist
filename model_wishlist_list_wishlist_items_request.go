@@ -116,8 +116,8 @@ func (o *WishlistListWishlistItemsRequest) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistListWishlistItemsRequest) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistListWishlistItemsRequest) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -148,8 +148,8 @@ func (o *WishlistListWishlistItemsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// &#39;Has&#39;PageSize returns a boolean if a field has been set.
-func (o *WishlistListWishlistItemsRequest) &#39;Has&#39;PageSize() bool {
+// HasPageSize returns a boolean if a field has been set.
+func (o *WishlistListWishlistItemsRequest) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -180,8 +180,8 @@ func (o *WishlistListWishlistItemsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// &#39;Has&#39;PageToken returns a boolean if a field has been set.
-func (o *WishlistListWishlistItemsRequest) &#39;Has&#39;PageToken() bool {
+// HasPageToken returns a boolean if a field has been set.
+func (o *WishlistListWishlistItemsRequest) HasPageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}

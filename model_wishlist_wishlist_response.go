@@ -76,8 +76,8 @@ func (o *WishlistWishlistResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -108,8 +108,8 @@ func (o *WishlistWishlistResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -140,8 +140,8 @@ func (o *WishlistWishlistResponse) GetSharedCodeOk() (*string, bool) {
 	return o.SharedCode, true
 }
 
-// &#39;Has&#39;SharedCode returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;SharedCode() bool {
+// HasSharedCode returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasSharedCode() bool {
 	if o != nil && !IsNil(o.SharedCode) {
 		return true
 	}
@@ -172,8 +172,8 @@ func (o *WishlistWishlistResponse) GetPrivacyOk() (*WishlistPrivacy, bool) {
 	return o.Privacy, true
 }
 
-// &#39;Has&#39;Privacy returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;Privacy() bool {
+// HasPrivacy returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasPrivacy() bool {
 	if o != nil && !IsNil(o.Privacy) {
 		return true
 	}
@@ -204,8 +204,8 @@ func (o *WishlistWishlistResponse) GetLabelOk() (*WishlistLocalizedText, bool) {
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -236,8 +236,8 @@ func (o *WishlistWishlistResponse) GetDescriptionOk() (*WishlistLocalizedText, b
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -268,8 +268,8 @@ func (o *WishlistWishlistResponse) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -300,8 +300,8 @@ func (o *WishlistWishlistResponse) GetIsDefaultOk() (*bool, bool) {
 	return o.IsDefault, true
 }
 
-// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;IsDefault() bool {
+// HasIsDefault returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasIsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -332,8 +332,8 @@ func (o *WishlistWishlistResponse) GetItemsCountOk() (*string, bool) {
 	return o.ItemsCount, true
 }
 
-// &#39;Has&#39;ItemsCount returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;ItemsCount() bool {
+// HasItemsCount returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasItemsCount() bool {
 	if o != nil && !IsNil(o.ItemsCount) {
 		return true
 	}
@@ -364,8 +364,8 @@ func (o *WishlistWishlistResponse) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -396,8 +396,8 @@ func (o *WishlistWishlistResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *WishlistWishlistResponse) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *WishlistWishlistResponse) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}

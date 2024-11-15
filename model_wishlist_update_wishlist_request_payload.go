@@ -68,8 +68,8 @@ func (o *WishlistUpdateWishlistRequestPayload) GetPrivacyOk() (*WishlistPrivacy,
 	return o.Privacy, true
 }
 
-// &#39;Has&#39;Privacy returns a boolean if a field has been set.
-func (o *WishlistUpdateWishlistRequestPayload) &#39;Has&#39;Privacy() bool {
+// HasPrivacy returns a boolean if a field has been set.
+func (o *WishlistUpdateWishlistRequestPayload) HasPrivacy() bool {
 	if o != nil && !IsNil(o.Privacy) {
 		return true
 	}
@@ -100,8 +100,8 @@ func (o *WishlistUpdateWishlistRequestPayload) GetLabelOk() (*WishlistLocalizedT
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *WishlistUpdateWishlistRequestPayload) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *WishlistUpdateWishlistRequestPayload) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -132,8 +132,8 @@ func (o *WishlistUpdateWishlistRequestPayload) GetDescriptionOk() (*WishlistLoca
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *WishlistUpdateWishlistRequestPayload) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *WishlistUpdateWishlistRequestPayload) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -164,8 +164,8 @@ func (o *WishlistUpdateWishlistRequestPayload) GetIsDefaultOk() (*bool, bool) {
 	return o.IsDefault, true
 }
 
-// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
-func (o *WishlistUpdateWishlistRequestPayload) &#39;Has&#39;IsDefault() bool {
+// HasIsDefault returns a boolean if a field has been set.
+func (o *WishlistUpdateWishlistRequestPayload) HasIsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}

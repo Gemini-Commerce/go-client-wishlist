@@ -62,8 +62,8 @@ func (o *ListWishlistsRequestFilter) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *ListWishlistsRequestFilter) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *ListWishlistsRequestFilter) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}

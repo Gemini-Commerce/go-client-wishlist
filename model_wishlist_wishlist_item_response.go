@@ -70,8 +70,8 @@ func (o *WishlistWishlistItemResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -102,8 +102,8 @@ func (o *WishlistWishlistItemResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -134,8 +134,8 @@ func (o *WishlistWishlistItemResponse) GetWishlistIdOk() (*string, bool) {
 	return o.WishlistId, true
 }
 
-// &#39;Has&#39;WishlistId returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;WishlistId() bool {
+// HasWishlistId returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasWishlistId() bool {
 	if o != nil && !IsNil(o.WishlistId) {
 		return true
 	}
@@ -166,8 +166,8 @@ func (o *WishlistWishlistItemResponse) GetItemGrnOk() (*string, bool) {
 	return o.ItemGrn, true
 }
 
-// &#39;Has&#39;ItemGrn returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;ItemGrn() bool {
+// HasItemGrn returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasItemGrn() bool {
 	if o != nil && !IsNil(o.ItemGrn) {
 		return true
 	}
@@ -198,8 +198,8 @@ func (o *WishlistWishlistItemResponse) GetPreferredQuantityOk() (*string, bool) 
 	return o.PreferredQuantity, true
 }
 
-// &#39;Has&#39;PreferredQuantity returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;PreferredQuantity() bool {
+// HasPreferredQuantity returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasPreferredQuantity() bool {
 	if o != nil && !IsNil(o.PreferredQuantity) {
 		return true
 	}
@@ -230,8 +230,8 @@ func (o *WishlistWishlistItemResponse) GetDescriptionOk() (*WishlistLocalizedTex
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -262,8 +262,8 @@ func (o *WishlistWishlistItemResponse) GetAddedByCustomerGrnOk() (*string, bool)
 	return o.AddedByCustomerGrn, true
 }
 
-// &#39;Has&#39;AddedByCustomerGrn returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;AddedByCustomerGrn() bool {
+// HasAddedByCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasAddedByCustomerGrn() bool {
 	if o != nil && !IsNil(o.AddedByCustomerGrn) {
 		return true
 	}
@@ -294,8 +294,8 @@ func (o *WishlistWishlistItemResponse) GetAddedAtOk() (*time.Time, bool) {
 	return o.AddedAt, true
 }
 
-// &#39;Has&#39;AddedAt returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;AddedAt() bool {
+// HasAddedAt returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasAddedAt() bool {
 	if o != nil && !IsNil(o.AddedAt) {
 		return true
 	}
@@ -326,8 +326,8 @@ func (o *WishlistWishlistItemResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *WishlistWishlistItemResponse) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *WishlistWishlistItemResponse) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}

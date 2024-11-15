@@ -115,8 +115,8 @@ func (o *WishlistGetWishlistBySharedCodeRequest) GetCustomerGrnOk() (*string, bo
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistGetWishlistBySharedCodeRequest) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistGetWishlistBySharedCodeRequest) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}

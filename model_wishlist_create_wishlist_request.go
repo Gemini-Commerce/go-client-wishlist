@@ -120,8 +120,8 @@ func (o *WishlistCreateWishlistRequest) GetLabelOk() (*WishlistLocalizedText, bo
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -152,8 +152,8 @@ func (o *WishlistCreateWishlistRequest) GetDescriptionOk() (*WishlistLocalizedTe
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -184,8 +184,8 @@ func (o *WishlistCreateWishlistRequest) GetCustomerGrnOk() (*string, bool) {
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}
@@ -216,8 +216,8 @@ func (o *WishlistCreateWishlistRequest) GetIsDefaultOk() (*bool, bool) {
 	return o.IsDefault, true
 }
 
-// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
-func (o *WishlistCreateWishlistRequest) &#39;Has&#39;IsDefault() bool {
+// HasIsDefault returns a boolean if a field has been set.
+func (o *WishlistCreateWishlistRequest) HasIsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}

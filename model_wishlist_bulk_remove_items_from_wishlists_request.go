@@ -116,8 +116,8 @@ func (o *WishlistBulkRemoveItemsFromWishlistsRequest) GetWishlistIdsOk() ([]stri
 	return o.WishlistIds, true
 }
 
-// &#39;Has&#39;WishlistIds returns a boolean if a field has been set.
-func (o *WishlistBulkRemoveItemsFromWishlistsRequest) &#39;Has&#39;WishlistIds() bool {
+// HasWishlistIds returns a boolean if a field has been set.
+func (o *WishlistBulkRemoveItemsFromWishlistsRequest) HasWishlistIds() bool {
 	if o != nil && !IsNil(o.WishlistIds) {
 		return true
 	}

@@ -63,8 +63,8 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) GetPreferredQuantityOk() (*
 	return o.PreferredQuantity, true
 }
 
-// &#39;Has&#39;PreferredQuantity returns a boolean if a field has been set.
-func (o *WishlistUpdateItemInWishlistRequestPayload) &#39;Has&#39;PreferredQuantity() bool {
+// HasPreferredQuantity returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequestPayload) HasPreferredQuantity() bool {
 	if o != nil && !IsNil(o.PreferredQuantity) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) GetDescriptionOk() (*Wishli
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *WishlistUpdateItemInWishlistRequestPayload) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequestPayload) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) GetCustomerGrnOk() (*string
 	return o.CustomerGrn, true
 }
 
-// &#39;Has&#39;CustomerGrn returns a boolean if a field has been set.
-func (o *WishlistUpdateItemInWishlistRequestPayload) &#39;Has&#39;CustomerGrn() bool {
+// HasCustomerGrn returns a boolean if a field has been set.
+func (o *WishlistUpdateItemInWishlistRequestPayload) HasCustomerGrn() bool {
 	if o != nil && !IsNil(o.CustomerGrn) {
 		return true
 	}

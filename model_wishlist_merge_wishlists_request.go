@@ -142,8 +142,8 @@ func (o *WishlistMergeWishlistsRequest) GetTargetWishlistIdOk() (*string, bool) 
 	return o.TargetWishlistId, true
 }
 
-// &#39;Has&#39;TargetWishlistId returns a boolean if a field has been set.
-func (o *WishlistMergeWishlistsRequest) &#39;Has&#39;TargetWishlistId() bool {
+// HasTargetWishlistId returns a boolean if a field has been set.
+func (o *WishlistMergeWishlistsRequest) HasTargetWishlistId() bool {
 	if o != nil && !IsNil(o.TargetWishlistId) {
 		return true
 	}
