@@ -22,8 +22,8 @@ type WishlistPermission string
 // List of wishlistPermission
 const (
 	WISHLISTPERMISSION_UNKNOWN_PERMISSION WishlistPermission = "UNKNOWN_PERMISSION"
-	WISHLISTPERMISSION_VIEW_PERMISSION WishlistPermission = "VIEW_PERMISSION"
-	WISHLISTPERMISSION_EDIT_PERMISSION WishlistPermission = "EDIT_PERMISSION"
+	WISHLISTPERMISSION_VIEW_PERMISSION    WishlistPermission = "VIEW_PERMISSION"
+	WISHLISTPERMISSION_EDIT_PERMISSION    WishlistPermission = "EDIT_PERMISSION"
 )
 
 // All allowed values of WishlistPermission enum
@@ -111,4 +111,3 @@ func (v *NullableWishlistPermission) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

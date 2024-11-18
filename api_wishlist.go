@@ -19,14 +19,13 @@ import (
 	"net/url"
 )
 
-
 // WishlistAPIService WishlistAPI service
 type WishlistAPIService service
 
 type ApiWishlistAddItemToWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistAddItemToWishlistRequest
+	body       *WishlistAddItemToWishlistRequest
 }
 
 func (r ApiWishlistAddItemToWishlistRequest) Body(body WishlistAddItemToWishlistRequest) ApiWishlistAddItemToWishlistRequest {
@@ -41,24 +40,25 @@ func (r ApiWishlistAddItemToWishlistRequest) Execute() (*WishlistWishlistItemRes
 /*
 WishlistAddItemToWishlist Method for WishlistAddItemToWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistAddItemToWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistAddItemToWishlistRequest
 */
 func (a *WishlistAPIService) WishlistAddItemToWishlist(ctx context.Context) ApiWishlistAddItemToWishlistRequest {
 	return ApiWishlistAddItemToWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistItemResponse
+//
+//	@return WishlistWishlistItemResponse
 func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r ApiWishlistAddItemToWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistItemResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistAddItemToWishlist")
@@ -130,14 +130,14 @@ func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r ApiWishlistAddIt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -154,9 +154,9 @@ func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r ApiWishlistAddIt
 }
 
 type ApiWishlistAreItemsInWishlistsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistAreItemsInWishlistsRequest
+	body       *WishlistAreItemsInWishlistsRequest
 }
 
 func (r ApiWishlistAreItemsInWishlistsRequest) Body(body WishlistAreItemsInWishlistsRequest) ApiWishlistAreItemsInWishlistsRequest {
@@ -171,24 +171,25 @@ func (r ApiWishlistAreItemsInWishlistsRequest) Execute() (*WishlistAreItemsInWis
 /*
 WishlistAreItemsInWishlists Method for WishlistAreItemsInWishlists
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistAreItemsInWishlistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistAreItemsInWishlistsRequest
 */
 func (a *WishlistAPIService) WishlistAreItemsInWishlists(ctx context.Context) ApiWishlistAreItemsInWishlistsRequest {
 	return ApiWishlistAreItemsInWishlistsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistAreItemsInWishlistsResponse
+//
+//	@return WishlistAreItemsInWishlistsResponse
 func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r ApiWishlistAreItemsInWishlistsRequest) (*WishlistAreItemsInWishlistsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistAreItemsInWishlistsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistAreItemsInWishlistsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistAreItemsInWishlists")
@@ -260,14 +261,14 @@ func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r ApiWishlistAre
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -284,9 +285,9 @@ func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r ApiWishlistAre
 }
 
 type ApiWishlistBulkCreateSharingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistBulkCreateSharingRequest
+	body       *WishlistBulkCreateSharingRequest
 }
 
 func (r ApiWishlistBulkCreateSharingRequest) Body(body WishlistBulkCreateSharingRequest) ApiWishlistBulkCreateSharingRequest {
@@ -301,24 +302,25 @@ func (r ApiWishlistBulkCreateSharingRequest) Execute() (*WishlistBulkCreateShari
 /*
 WishlistBulkCreateSharing Sharing endpoints
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistBulkCreateSharingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistBulkCreateSharingRequest
 */
 func (a *WishlistAPIService) WishlistBulkCreateSharing(ctx context.Context) ApiWishlistBulkCreateSharingRequest {
 	return ApiWishlistBulkCreateSharingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistBulkCreateSharingResponse
+//
+//	@return WishlistBulkCreateSharingResponse
 func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r ApiWishlistBulkCreateSharingRequest) (*WishlistBulkCreateSharingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistBulkCreateSharingResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistBulkCreateSharingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistBulkCreateSharing")
@@ -390,14 +392,14 @@ func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r ApiWishlistBulkC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -414,9 +416,9 @@ func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r ApiWishlistBulkC
 }
 
 type ApiWishlistBulkRemoveItemsFromWishlistsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistBulkRemoveItemsFromWishlistsRequest
+	body       *WishlistBulkRemoveItemsFromWishlistsRequest
 }
 
 func (r ApiWishlistBulkRemoveItemsFromWishlistsRequest) Body(body WishlistBulkRemoveItemsFromWishlistsRequest) ApiWishlistBulkRemoveItemsFromWishlistsRequest {
@@ -431,24 +433,25 @@ func (r ApiWishlistBulkRemoveItemsFromWishlistsRequest) Execute() (map[string]in
 /*
 WishlistBulkRemoveItemsFromWishlists BulkRemoveItemsFromWishlists removes items from wishlists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistBulkRemoveItemsFromWishlistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistBulkRemoveItemsFromWishlistsRequest
 */
 func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlists(ctx context.Context) ApiWishlistBulkRemoveItemsFromWishlistsRequest {
 	return ApiWishlistBulkRemoveItemsFromWishlistsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r ApiWishlistBulkRemoveItemsFromWishlistsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistBulkRemoveItemsFromWishlists")
@@ -520,14 +523,14 @@ func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r ApiWi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -544,9 +547,9 @@ func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r ApiWi
 }
 
 type ApiWishlistBulkRevokeSharingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistBulkRevokeSharingRequest
+	body       *WishlistBulkRevokeSharingRequest
 }
 
 func (r ApiWishlistBulkRevokeSharingRequest) Body(body WishlistBulkRevokeSharingRequest) ApiWishlistBulkRevokeSharingRequest {
@@ -561,24 +564,25 @@ func (r ApiWishlistBulkRevokeSharingRequest) Execute() (map[string]interface{}, 
 /*
 WishlistBulkRevokeSharing Method for WishlistBulkRevokeSharing
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistBulkRevokeSharingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistBulkRevokeSharingRequest
 */
 func (a *WishlistAPIService) WishlistBulkRevokeSharing(ctx context.Context) ApiWishlistBulkRevokeSharingRequest {
 	return ApiWishlistBulkRevokeSharingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r ApiWishlistBulkRevokeSharingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistBulkRevokeSharing")
@@ -650,14 +654,14 @@ func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r ApiWishlistBulkR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -674,9 +678,9 @@ func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r ApiWishlistBulkR
 }
 
 type ApiWishlistCreateWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistCreateWishlistRequest
+	body       *WishlistCreateWishlistRequest
 }
 
 func (r ApiWishlistCreateWishlistRequest) Body(body WishlistCreateWishlistRequest) ApiWishlistCreateWishlistRequest {
@@ -691,24 +695,25 @@ func (r ApiWishlistCreateWishlistRequest) Execute() (*WishlistWishlistResponse, 
 /*
 WishlistCreateWishlist Method for WishlistCreateWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistCreateWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistCreateWishlistRequest
 */
 func (a *WishlistAPIService) WishlistCreateWishlist(ctx context.Context) ApiWishlistCreateWishlistRequest {
 	return ApiWishlistCreateWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistResponse
+//
+//	@return WishlistWishlistResponse
 func (a *WishlistAPIService) WishlistCreateWishlistExecute(r ApiWishlistCreateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistCreateWishlist")
@@ -780,14 +785,14 @@ func (a *WishlistAPIService) WishlistCreateWishlistExecute(r ApiWishlistCreateWi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -804,9 +809,9 @@ func (a *WishlistAPIService) WishlistCreateWishlistExecute(r ApiWishlistCreateWi
 }
 
 type ApiWishlistDeleteWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistDeleteWishlistRequest
+	body       *WishlistDeleteWishlistRequest
 }
 
 func (r ApiWishlistDeleteWishlistRequest) Body(body WishlistDeleteWishlistRequest) ApiWishlistDeleteWishlistRequest {
@@ -821,24 +826,25 @@ func (r ApiWishlistDeleteWishlistRequest) Execute() (map[string]interface{}, *ht
 /*
 WishlistDeleteWishlist Method for WishlistDeleteWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistDeleteWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistDeleteWishlistRequest
 */
 func (a *WishlistAPIService) WishlistDeleteWishlist(ctx context.Context) ApiWishlistDeleteWishlistRequest {
 	return ApiWishlistDeleteWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r ApiWishlistDeleteWishlistRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistDeleteWishlist")
@@ -910,14 +916,14 @@ func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r ApiWishlistDeleteWi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -934,9 +940,9 @@ func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r ApiWishlistDeleteWi
 }
 
 type ApiWishlistGetItemFromWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistGetItemFromWishlistRequest
+	body       *WishlistGetItemFromWishlistRequest
 }
 
 func (r ApiWishlistGetItemFromWishlistRequest) Body(body WishlistGetItemFromWishlistRequest) ApiWishlistGetItemFromWishlistRequest {
@@ -951,24 +957,25 @@ func (r ApiWishlistGetItemFromWishlistRequest) Execute() (*WishlistWishlistItemR
 /*
 WishlistGetItemFromWishlist Method for WishlistGetItemFromWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistGetItemFromWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistGetItemFromWishlistRequest
 */
 func (a *WishlistAPIService) WishlistGetItemFromWishlist(ctx context.Context) ApiWishlistGetItemFromWishlistRequest {
 	return ApiWishlistGetItemFromWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistItemResponse
+//
+//	@return WishlistWishlistItemResponse
 func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r ApiWishlistGetItemFromWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistItemResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistGetItemFromWishlist")
@@ -1040,14 +1047,14 @@ func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r ApiWishlistGet
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1064,9 +1071,9 @@ func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r ApiWishlistGet
 }
 
 type ApiWishlistGetWishlistByIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistGetWishlistByIdRequest
+	body       *WishlistGetWishlistByIdRequest
 }
 
 func (r ApiWishlistGetWishlistByIdRequest) Body(body WishlistGetWishlistByIdRequest) ApiWishlistGetWishlistByIdRequest {
@@ -1081,24 +1088,25 @@ func (r ApiWishlistGetWishlistByIdRequest) Execute() (*WishlistWishlistResponse,
 /*
 WishlistGetWishlistById Method for WishlistGetWishlistById
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistGetWishlistByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistGetWishlistByIdRequest
 */
 func (a *WishlistAPIService) WishlistGetWishlistById(ctx context.Context) ApiWishlistGetWishlistByIdRequest {
 	return ApiWishlistGetWishlistByIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistResponse
+//
+//	@return WishlistWishlistResponse
 func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r ApiWishlistGetWishlistByIdRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistGetWishlistById")
@@ -1170,14 +1178,14 @@ func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r ApiWishlistGetWish
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1194,9 +1202,9 @@ func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r ApiWishlistGetWish
 }
 
 type ApiWishlistGetWishlistBySharedCodeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistGetWishlistBySharedCodeRequest
+	body       *WishlistGetWishlistBySharedCodeRequest
 }
 
 func (r ApiWishlistGetWishlistBySharedCodeRequest) Body(body WishlistGetWishlistBySharedCodeRequest) ApiWishlistGetWishlistBySharedCodeRequest {
@@ -1211,24 +1219,25 @@ func (r ApiWishlistGetWishlistBySharedCodeRequest) Execute() (*WishlistWishlistR
 /*
 WishlistGetWishlistBySharedCode Method for WishlistGetWishlistBySharedCode
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistGetWishlistBySharedCodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistGetWishlistBySharedCodeRequest
 */
 func (a *WishlistAPIService) WishlistGetWishlistBySharedCode(ctx context.Context) ApiWishlistGetWishlistBySharedCodeRequest {
 	return ApiWishlistGetWishlistBySharedCodeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistResponse
+//
+//	@return WishlistWishlistResponse
 func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r ApiWishlistGetWishlistBySharedCodeRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistGetWishlistBySharedCode")
@@ -1300,14 +1309,14 @@ func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r ApiWishlis
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1324,9 +1333,9 @@ func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r ApiWishlis
 }
 
 type ApiWishlistListWishlistItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistListWishlistItemsRequest
+	body       *WishlistListWishlistItemsRequest
 }
 
 func (r ApiWishlistListWishlistItemsRequest) Body(body WishlistListWishlistItemsRequest) ApiWishlistListWishlistItemsRequest {
@@ -1341,24 +1350,25 @@ func (r ApiWishlistListWishlistItemsRequest) Execute() (*WishlistListWishlistIte
 /*
 WishlistListWishlistItems Method for WishlistListWishlistItems
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistListWishlistItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistListWishlistItemsRequest
 */
 func (a *WishlistAPIService) WishlistListWishlistItems(ctx context.Context) ApiWishlistListWishlistItemsRequest {
 	return ApiWishlistListWishlistItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistListWishlistItemsResponse
+//
+//	@return WishlistListWishlistItemsResponse
 func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r ApiWishlistListWishlistItemsRequest) (*WishlistListWishlistItemsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistListWishlistItemsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistListWishlistItemsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistListWishlistItems")
@@ -1430,14 +1440,14 @@ func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r ApiWishlistListW
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1454,9 +1464,9 @@ func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r ApiWishlistListW
 }
 
 type ApiWishlistListWishlistsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistListWishlistsRequest
+	body       *WishlistListWishlistsRequest
 }
 
 func (r ApiWishlistListWishlistsRequest) Body(body WishlistListWishlistsRequest) ApiWishlistListWishlistsRequest {
@@ -1471,24 +1481,25 @@ func (r ApiWishlistListWishlistsRequest) Execute() (*WishlistListWishlistsRespon
 /*
 WishlistListWishlists Method for WishlistListWishlists
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistListWishlistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistListWishlistsRequest
 */
 func (a *WishlistAPIService) WishlistListWishlists(ctx context.Context) ApiWishlistListWishlistsRequest {
 	return ApiWishlistListWishlistsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistListWishlistsResponse
+//
+//	@return WishlistListWishlistsResponse
 func (a *WishlistAPIService) WishlistListWishlistsExecute(r ApiWishlistListWishlistsRequest) (*WishlistListWishlistsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistListWishlistsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistListWishlistsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistListWishlists")
@@ -1560,14 +1571,14 @@ func (a *WishlistAPIService) WishlistListWishlistsExecute(r ApiWishlistListWishl
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1584,9 +1595,9 @@ func (a *WishlistAPIService) WishlistListWishlistsExecute(r ApiWishlistListWishl
 }
 
 type ApiWishlistMergeWishlistsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistMergeWishlistsRequest
+	body       *WishlistMergeWishlistsRequest
 }
 
 func (r ApiWishlistMergeWishlistsRequest) Body(body WishlistMergeWishlistsRequest) ApiWishlistMergeWishlistsRequest {
@@ -1601,24 +1612,25 @@ func (r ApiWishlistMergeWishlistsRequest) Execute() (*WishlistWishlistResponse, 
 /*
 WishlistMergeWishlists Method for WishlistMergeWishlists
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistMergeWishlistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistMergeWishlistsRequest
 */
 func (a *WishlistAPIService) WishlistMergeWishlists(ctx context.Context) ApiWishlistMergeWishlistsRequest {
 	return ApiWishlistMergeWishlistsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistResponse
+//
+//	@return WishlistWishlistResponse
 func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r ApiWishlistMergeWishlistsRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistMergeWishlists")
@@ -1690,14 +1702,14 @@ func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r ApiWishlistMergeWis
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1714,9 +1726,9 @@ func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r ApiWishlistMergeWis
 }
 
 type ApiWishlistRemoveItemFromWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistRemoveItemFromWishlistRequest
+	body       *WishlistRemoveItemFromWishlistRequest
 }
 
 func (r ApiWishlistRemoveItemFromWishlistRequest) Body(body WishlistRemoveItemFromWishlistRequest) ApiWishlistRemoveItemFromWishlistRequest {
@@ -1731,24 +1743,25 @@ func (r ApiWishlistRemoveItemFromWishlistRequest) Execute() (map[string]interfac
 /*
 WishlistRemoveItemFromWishlist Method for WishlistRemoveItemFromWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistRemoveItemFromWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistRemoveItemFromWishlistRequest
 */
 func (a *WishlistAPIService) WishlistRemoveItemFromWishlist(ctx context.Context) ApiWishlistRemoveItemFromWishlistRequest {
 	return ApiWishlistRemoveItemFromWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r ApiWishlistRemoveItemFromWishlistRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistRemoveItemFromWishlist")
@@ -1820,14 +1833,14 @@ func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r ApiWishlist
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1844,9 +1857,9 @@ func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r ApiWishlist
 }
 
 type ApiWishlistUpdateItemInWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistUpdateItemInWishlistRequest
+	body       *WishlistUpdateItemInWishlistRequest
 }
 
 func (r ApiWishlistUpdateItemInWishlistRequest) Body(body WishlistUpdateItemInWishlistRequest) ApiWishlistUpdateItemInWishlistRequest {
@@ -1861,24 +1874,25 @@ func (r ApiWishlistUpdateItemInWishlistRequest) Execute() (*WishlistWishlistItem
 /*
 WishlistUpdateItemInWishlist Method for WishlistUpdateItemInWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistUpdateItemInWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistUpdateItemInWishlistRequest
 */
 func (a *WishlistAPIService) WishlistUpdateItemInWishlist(ctx context.Context) ApiWishlistUpdateItemInWishlistRequest {
 	return ApiWishlistUpdateItemInWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistItemResponse
+//
+//	@return WishlistWishlistItemResponse
 func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r ApiWishlistUpdateItemInWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistItemResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistUpdateItemInWishlist")
@@ -1950,14 +1964,14 @@ func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r ApiWishlistUp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1974,9 +1988,9 @@ func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r ApiWishlistUp
 }
 
 type ApiWishlistUpdateWishlistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WishlistAPIService
-	body *WishlistUpdateWishlistRequest
+	body       *WishlistUpdateWishlistRequest
 }
 
 func (r ApiWishlistUpdateWishlistRequest) Body(body WishlistUpdateWishlistRequest) ApiWishlistUpdateWishlistRequest {
@@ -1991,24 +2005,25 @@ func (r ApiWishlistUpdateWishlistRequest) Execute() (*WishlistWishlistResponse, 
 /*
 WishlistUpdateWishlist Method for WishlistUpdateWishlist
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWishlistUpdateWishlistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWishlistUpdateWishlistRequest
 */
 func (a *WishlistAPIService) WishlistUpdateWishlist(ctx context.Context) ApiWishlistUpdateWishlistRequest {
 	return ApiWishlistUpdateWishlistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WishlistWishlistResponse
+//
+//	@return WishlistWishlistResponse
 func (a *WishlistAPIService) WishlistUpdateWishlistExecute(r ApiWishlistUpdateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WishlistWishlistResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WishlistWishlistResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WishlistAPIService.WishlistUpdateWishlist")
@@ -2080,14 +2095,14 @@ func (a *WishlistAPIService) WishlistUpdateWishlistExecute(r ApiWishlistUpdateWi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

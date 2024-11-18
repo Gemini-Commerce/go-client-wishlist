@@ -21,7 +21,7 @@ var _ MappedNullable = &ListWishlistsRequestFilter{}
 // ListWishlistsRequestFilter struct for ListWishlistsRequestFilter
 type ListWishlistsRequestFilter struct {
 	// If the customer GRN is set on JWT, it will be used as default. Otherwise, it will be used the customer_grn field.
-	CustomerGrn *string `json:"customerGrn,omitempty"`
+	CustomerGrn          *string `json:"customerGrn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ListWishlistsRequestFilter) SetCustomerGrn(v string) {
 }
 
 func (o ListWishlistsRequestFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -120,22 +120,24 @@ func (o *ListWishlistsRequestFilter) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ListWishlistsRequestFilter) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *ListWishlistsRequestFilter) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableListWishlistsRequestFilter struct {
 	value *ListWishlistsRequestFilter
 	isSet bool
@@ -171,5 +173,3 @@ func (v *NullableListWishlistsRequestFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

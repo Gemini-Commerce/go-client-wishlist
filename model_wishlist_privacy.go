@@ -22,9 +22,9 @@ type WishlistPrivacy string
 // List of wishlistPrivacy
 const (
 	WISHLISTPRIVACY_UNKNOWN WishlistPrivacy = "PRIVACY_UNKNOWN"
-	WISHLISTPRIVACY_PUBLIC WishlistPrivacy = "PRIVACY_PUBLIC"
+	WISHLISTPRIVACY_PUBLIC  WishlistPrivacy = "PRIVACY_PUBLIC"
 	WISHLISTPRIVACY_PRIVATE WishlistPrivacy = "PRIVACY_PRIVATE"
-	WISHLISTPRIVACY_SHARED WishlistPrivacy = "PRIVACY_SHARED"
+	WISHLISTPRIVACY_SHARED  WishlistPrivacy = "PRIVACY_SHARED"
 )
 
 // All allowed values of WishlistPrivacy enum
@@ -113,4 +113,3 @@ func (v *NullableWishlistPrivacy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

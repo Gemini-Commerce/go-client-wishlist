@@ -11,10 +11,10 @@ package wishlist
 
 import (
 	"context"
+	openapiclient "github.com/Gemini-Commerce/go-client-wishlist"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/Gemini-Commerce/go-client-wishlist"
 )
 
 func Test_wishlist_WishlistAPIService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistAddItemToWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistAddItemToWishlist(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistAreItemsInWishlists", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistAreItemsInWishlists(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistBulkCreateSharing", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistBulkCreateSharing(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistBulkRemoveItemsFromWishlists", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistBulkRemoveItemsFromWishlists(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistBulkRevokeSharing", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistBulkRevokeSharing(context.Background()).Execute()
 
@@ -84,7 +84,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistCreateWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistCreateWishlist(context.Background()).Execute()
 
@@ -96,7 +96,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistDeleteWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistDeleteWishlist(context.Background()).Execute()
 
@@ -108,7 +108,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistGetItemFromWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistGetItemFromWishlist(context.Background()).Execute()
 
@@ -120,7 +120,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistGetWishlistById", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistGetWishlistById(context.Background()).Execute()
 
@@ -132,7 +132,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistGetWishlistBySharedCode", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistGetWishlistBySharedCode(context.Background()).Execute()
 
@@ -144,7 +144,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistListWishlistItems", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistListWishlistItems(context.Background()).Execute()
 
@@ -156,7 +156,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistListWishlists", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistListWishlists(context.Background()).Execute()
 
@@ -168,7 +168,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistMergeWishlists", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistMergeWishlists(context.Background()).Execute()
 
@@ -180,7 +180,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistRemoveItemFromWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistRemoveItemFromWishlist(context.Background()).Execute()
 
@@ -192,7 +192,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistUpdateItemInWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistUpdateItemInWishlist(context.Background()).Execute()
 
@@ -204,7 +204,7 @@ func Test_wishlist_WishlistAPIService(t *testing.T) {
 
 	t.Run("Test WishlistAPIService WishlistUpdateWishlist", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WishlistAPI.WishlistUpdateWishlist(context.Background()).Execute()
 

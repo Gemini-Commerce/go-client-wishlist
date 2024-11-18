@@ -20,8 +20,8 @@ var _ MappedNullable = &WishlistBulkRevokeSharingRequest{}
 
 // WishlistBulkRevokeSharingRequest struct for WishlistBulkRevokeSharingRequest
 type WishlistBulkRevokeSharingRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	SharingIds []string `json:"sharingIds,omitempty"`
+	TenantId             *string  `json:"tenantId,omitempty"`
+	SharingIds           []string `json:"sharingIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -109,7 +109,7 @@ func (o *WishlistBulkRevokeSharingRequest) SetSharingIds(v []string) {
 }
 
 func (o WishlistBulkRevokeSharingRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,22 +156,24 @@ func (o *WishlistBulkRevokeSharingRequest) UnmarshalJSON(data []byte) (err error
 
 // GetValue returns the value of well-known types
 func (o *WishlistBulkRevokeSharingRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *WishlistBulkRevokeSharingRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableWishlistBulkRevokeSharingRequest struct {
 	value *WishlistBulkRevokeSharingRequest
 	isSet bool
@@ -207,5 +209,3 @@ func (v *NullableWishlistBulkRevokeSharingRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,12 +21,12 @@ var _ MappedNullable = &WishlistAddItemToWishlistRequest{}
 
 // WishlistAddItemToWishlistRequest struct for WishlistAddItemToWishlistRequest
 type WishlistAddItemToWishlistRequest struct {
-	TenantId string `json:"tenantId"`
-	WishlistId string `json:"wishlistId"`
-	ItemGrn string `json:"itemGrn"`
-	PreferredQuantity *string `json:"preferredQuantity,omitempty"`
-	Description *WishlistLocalizedText `json:"description,omitempty"`
-	CustomerGrn *string `json:"customerGrn,omitempty"`
+	TenantId             string                 `json:"tenantId"`
+	WishlistId           string                 `json:"wishlistId"`
+	ItemGrn              string                 `json:"itemGrn"`
+	PreferredQuantity    *string                `json:"preferredQuantity,omitempty"`
+	Description          *WishlistLocalizedText `json:"description,omitempty"`
+	CustomerGrn          *string                `json:"customerGrn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -221,7 +221,7 @@ func (o *WishlistAddItemToWishlistRequest) SetCustomerGrn(v string) {
 }
 
 func (o WishlistAddItemToWishlistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -265,10 +265,10 @@ func (o *WishlistAddItemToWishlistRequest) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -301,22 +301,24 @@ func (o *WishlistAddItemToWishlistRequest) UnmarshalJSON(data []byte) (err error
 
 // GetValue returns the value of well-known types
 func (o *WishlistAddItemToWishlistRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *WishlistAddItemToWishlistRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableWishlistAddItemToWishlistRequest struct {
 	value *WishlistAddItemToWishlistRequest
 	isSet bool
@@ -352,5 +354,3 @@ func (v *NullableWishlistAddItemToWishlistRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

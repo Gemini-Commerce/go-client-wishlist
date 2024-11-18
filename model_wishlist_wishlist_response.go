@@ -21,17 +21,17 @@ var _ MappedNullable = &WishlistWishlistResponse{}
 
 // WishlistWishlistResponse struct for WishlistWishlistResponse
 type WishlistWishlistResponse struct {
-	Id *string `json:"id,omitempty"`
-	Grn *string `json:"grn,omitempty"`
-	SharedCode *string `json:"sharedCode,omitempty"`
-	Privacy *WishlistPrivacy `json:"privacy,omitempty"`
-	Label *WishlistLocalizedText `json:"label,omitempty"`
-	Description *WishlistLocalizedText `json:"description,omitempty"`
-	CustomerGrn *string `json:"customerGrn,omitempty"`
-	IsDefault *bool `json:"isDefault,omitempty"`
-	ItemsCount *string `json:"itemsCount,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
+	Id                   *string                `json:"id,omitempty"`
+	Grn                  *string                `json:"grn,omitempty"`
+	SharedCode           *string                `json:"sharedCode,omitempty"`
+	Privacy              *WishlistPrivacy       `json:"privacy,omitempty"`
+	Label                *WishlistLocalizedText `json:"label,omitempty"`
+	Description          *WishlistLocalizedText `json:"description,omitempty"`
+	CustomerGrn          *string                `json:"customerGrn,omitempty"`
+	IsDefault            *bool                  `json:"isDefault,omitempty"`
+	ItemsCount           *string                `json:"itemsCount,omitempty"`
+	CreatedAt            *time.Time             `json:"createdAt,omitempty"`
+	UpdatedAt            *time.Time             `json:"updatedAt,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -411,7 +411,7 @@ func (o *WishlistWishlistResponse) SetUpdatedAt(v time.Time) {
 }
 
 func (o WishlistWishlistResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -494,22 +494,24 @@ func (o *WishlistWishlistResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *WishlistWishlistResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *WishlistWishlistResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableWishlistWishlistResponse struct {
 	value *WishlistWishlistResponse
 	isSet bool
@@ -545,5 +547,3 @@ func (v *NullableWishlistWishlistResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

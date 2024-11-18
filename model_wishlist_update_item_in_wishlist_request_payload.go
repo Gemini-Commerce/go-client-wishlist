@@ -20,9 +20,9 @@ var _ MappedNullable = &WishlistUpdateItemInWishlistRequestPayload{}
 
 // WishlistUpdateItemInWishlistRequestPayload struct for WishlistUpdateItemInWishlistRequestPayload
 type WishlistUpdateItemInWishlistRequestPayload struct {
-	PreferredQuantity *string `json:"preferredQuantity,omitempty"`
-	Description *WishlistLocalizedText `json:"description,omitempty"`
-	CustomerGrn *string `json:"customerGrn,omitempty"`
+	PreferredQuantity    *string                `json:"preferredQuantity,omitempty"`
+	Description          *WishlistLocalizedText `json:"description,omitempty"`
+	CustomerGrn          *string                `json:"customerGrn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -142,7 +142,7 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) SetCustomerGrn(v string) {
 }
 
 func (o WishlistUpdateItemInWishlistRequestPayload) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,22 +193,24 @@ func (o *WishlistUpdateItemInWishlistRequestPayload) UnmarshalJSON(data []byte) 
 
 // GetValue returns the value of well-known types
 func (o *WishlistUpdateItemInWishlistRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *WishlistUpdateItemInWishlistRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableWishlistUpdateItemInWishlistRequestPayload struct {
 	value *WishlistUpdateItemInWishlistRequestPayload
 	isSet bool
@@ -244,5 +246,3 @@ func (v *NullableWishlistUpdateItemInWishlistRequestPayload) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

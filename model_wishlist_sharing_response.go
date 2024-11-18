@@ -21,15 +21,15 @@ var _ MappedNullable = &WishlistSharingResponse{}
 
 // WishlistSharingResponse struct for WishlistSharingResponse
 type WishlistSharingResponse struct {
-	SharingId *string `json:"sharingId,omitempty"`
-	SharingGrn *string `json:"sharingGrn,omitempty"`
-	WishlistId *string `json:"wishlistId,omitempty"`
-	Permission *WishlistPermission `json:"permission,omitempty"`
-	CustomerGrn *string `json:"customerGrn,omitempty"`
-	CustomerAggregationId *string `json:"customerAggregationId,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SharingId             *string             `json:"sharingId,omitempty"`
+	SharingGrn            *string             `json:"sharingGrn,omitempty"`
+	WishlistId            *string             `json:"wishlistId,omitempty"`
+	Permission            *WishlistPermission `json:"permission,omitempty"`
+	CustomerGrn           *string             `json:"customerGrn,omitempty"`
+	CustomerAggregationId *string             `json:"customerAggregationId,omitempty"`
+	CreatedAt             *time.Time          `json:"createdAt,omitempty"`
+	UpdatedAt             *time.Time          `json:"updatedAt,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _WishlistSharingResponse WishlistSharingResponse
@@ -312,7 +312,7 @@ func (o *WishlistSharingResponse) SetUpdatedAt(v time.Time) {
 }
 
 func (o WishlistSharingResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,22 +383,24 @@ func (o *WishlistSharingResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *WishlistSharingResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *WishlistSharingResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableWishlistSharingResponse struct {
 	value *WishlistSharingResponse
 	isSet bool
@@ -434,5 +436,3 @@ func (v *NullableWishlistSharingResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

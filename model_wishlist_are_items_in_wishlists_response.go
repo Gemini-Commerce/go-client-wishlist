@@ -20,7 +20,7 @@ var _ MappedNullable = &WishlistAreItemsInWishlistsResponse{}
 
 // WishlistAreItemsInWishlistsResponse struct for WishlistAreItemsInWishlistsResponse
 type WishlistAreItemsInWishlistsResponse struct {
-	ItemGrnMap *map[string]WishlistAreItemsInWishlistsResponsePayload `json:"itemGrnMap,omitempty"`
+	ItemGrnMap           *map[string]WishlistAreItemsInWishlistsResponsePayload `json:"itemGrnMap,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *WishlistAreItemsInWishlistsResponse) SetItemGrnMap(v map[string]Wishlis
 }
 
 func (o WishlistAreItemsInWishlistsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *WishlistAreItemsInWishlistsResponse) UnmarshalJSON(data []byte) (err er
 
 // GetValue returns the value of well-known types
 func (o *WishlistAreItemsInWishlistsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *WishlistAreItemsInWishlistsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableWishlistAreItemsInWishlistsResponse struct {
 	value *WishlistAreItemsInWishlistsResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableWishlistAreItemsInWishlistsResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
