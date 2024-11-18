@@ -769,6 +769,7 @@ components:
             type: string
           type: object
       type: object
+      x-golang-getsetvalue-exists: true
     wishlistMergeWishlistsRequest:
       properties:
         tenantId:
