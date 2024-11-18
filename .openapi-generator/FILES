@@ -76,4 +76,5 @@ model_wishlist_update_wishlist_request_payload.go
 model_wishlist_wishlist_item_response.go
 model_wishlist_wishlist_response.go
 response.go
+test/api_wishlist_test.go
 utils.go
