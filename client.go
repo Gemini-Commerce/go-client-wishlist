@@ -51,7 +51,7 @@ type APIClient struct {
 
 	// API Services
 
-	WishlistAPI *WishlistAPIService
+	WishlistAPI WishlistAPI
 }
 
 type service struct {

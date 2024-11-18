@@ -19,12 +19,207 @@ import (
 	"net/url"
 )
 
+type WishlistAPI interface {
+
+	/*
+		WishlistAddItemToWishlist Method for WishlistAddItemToWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistAddItemToWishlistRequest
+	*/
+	WishlistAddItemToWishlist(ctx context.Context) ApiWishlistAddItemToWishlistRequest
+
+	// WishlistAddItemToWishlistExecute executes the request
+	//  @return WishlistWishlistItemResponse
+	WishlistAddItemToWishlistExecute(r ApiWishlistAddItemToWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error)
+
+	/*
+		WishlistAreItemsInWishlists Method for WishlistAreItemsInWishlists
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistAreItemsInWishlistsRequest
+	*/
+	WishlistAreItemsInWishlists(ctx context.Context) ApiWishlistAreItemsInWishlistsRequest
+
+	// WishlistAreItemsInWishlistsExecute executes the request
+	//  @return WishlistAreItemsInWishlistsResponse
+	WishlistAreItemsInWishlistsExecute(r ApiWishlistAreItemsInWishlistsRequest) (*WishlistAreItemsInWishlistsResponse, *http.Response, error)
+
+	/*
+		WishlistBulkCreateSharing Sharing endpoints
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistBulkCreateSharingRequest
+	*/
+	WishlistBulkCreateSharing(ctx context.Context) ApiWishlistBulkCreateSharingRequest
+
+	// WishlistBulkCreateSharingExecute executes the request
+	//  @return WishlistBulkCreateSharingResponse
+	WishlistBulkCreateSharingExecute(r ApiWishlistBulkCreateSharingRequest) (*WishlistBulkCreateSharingResponse, *http.Response, error)
+
+	/*
+		WishlistBulkRemoveItemsFromWishlists BulkRemoveItemsFromWishlists removes items from wishlists.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistBulkRemoveItemsFromWishlistsRequest
+	*/
+	WishlistBulkRemoveItemsFromWishlists(ctx context.Context) ApiWishlistBulkRemoveItemsFromWishlistsRequest
+
+	// WishlistBulkRemoveItemsFromWishlistsExecute executes the request
+	//  @return map[string]interface{}
+	WishlistBulkRemoveItemsFromWishlistsExecute(r ApiWishlistBulkRemoveItemsFromWishlistsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		WishlistBulkRevokeSharing Method for WishlistBulkRevokeSharing
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistBulkRevokeSharingRequest
+	*/
+	WishlistBulkRevokeSharing(ctx context.Context) ApiWishlistBulkRevokeSharingRequest
+
+	// WishlistBulkRevokeSharingExecute executes the request
+	//  @return map[string]interface{}
+	WishlistBulkRevokeSharingExecute(r ApiWishlistBulkRevokeSharingRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		WishlistCreateWishlist Method for WishlistCreateWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistCreateWishlistRequest
+	*/
+	WishlistCreateWishlist(ctx context.Context) ApiWishlistCreateWishlistRequest
+
+	// WishlistCreateWishlistExecute executes the request
+	//  @return WishlistWishlistResponse
+	WishlistCreateWishlistExecute(r ApiWishlistCreateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error)
+
+	/*
+		WishlistDeleteWishlist Method for WishlistDeleteWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistDeleteWishlistRequest
+	*/
+	WishlistDeleteWishlist(ctx context.Context) ApiWishlistDeleteWishlistRequest
+
+	// WishlistDeleteWishlistExecute executes the request
+	//  @return map[string]interface{}
+	WishlistDeleteWishlistExecute(r ApiWishlistDeleteWishlistRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		WishlistGetItemFromWishlist Method for WishlistGetItemFromWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistGetItemFromWishlistRequest
+	*/
+	WishlistGetItemFromWishlist(ctx context.Context) ApiWishlistGetItemFromWishlistRequest
+
+	// WishlistGetItemFromWishlistExecute executes the request
+	//  @return WishlistWishlistItemResponse
+	WishlistGetItemFromWishlistExecute(r ApiWishlistGetItemFromWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error)
+
+	/*
+		WishlistGetWishlistById Method for WishlistGetWishlistById
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistGetWishlistByIdRequest
+	*/
+	WishlistGetWishlistById(ctx context.Context) ApiWishlistGetWishlistByIdRequest
+
+	// WishlistGetWishlistByIdExecute executes the request
+	//  @return WishlistWishlistResponse
+	WishlistGetWishlistByIdExecute(r ApiWishlistGetWishlistByIdRequest) (*WishlistWishlistResponse, *http.Response, error)
+
+	/*
+		WishlistGetWishlistBySharedCode Method for WishlistGetWishlistBySharedCode
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistGetWishlistBySharedCodeRequest
+	*/
+	WishlistGetWishlistBySharedCode(ctx context.Context) ApiWishlistGetWishlistBySharedCodeRequest
+
+	// WishlistGetWishlistBySharedCodeExecute executes the request
+	//  @return WishlistWishlistResponse
+	WishlistGetWishlistBySharedCodeExecute(r ApiWishlistGetWishlistBySharedCodeRequest) (*WishlistWishlistResponse, *http.Response, error)
+
+	/*
+		WishlistListWishlistItems Method for WishlistListWishlistItems
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistListWishlistItemsRequest
+	*/
+	WishlistListWishlistItems(ctx context.Context) ApiWishlistListWishlistItemsRequest
+
+	// WishlistListWishlistItemsExecute executes the request
+	//  @return WishlistListWishlistItemsResponse
+	WishlistListWishlistItemsExecute(r ApiWishlistListWishlistItemsRequest) (*WishlistListWishlistItemsResponse, *http.Response, error)
+
+	/*
+		WishlistListWishlists Method for WishlistListWishlists
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistListWishlistsRequest
+	*/
+	WishlistListWishlists(ctx context.Context) ApiWishlistListWishlistsRequest
+
+	// WishlistListWishlistsExecute executes the request
+	//  @return WishlistListWishlistsResponse
+	WishlistListWishlistsExecute(r ApiWishlistListWishlistsRequest) (*WishlistListWishlistsResponse, *http.Response, error)
+
+	/*
+		WishlistMergeWishlists Method for WishlistMergeWishlists
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistMergeWishlistsRequest
+	*/
+	WishlistMergeWishlists(ctx context.Context) ApiWishlistMergeWishlistsRequest
+
+	// WishlistMergeWishlistsExecute executes the request
+	//  @return WishlistWishlistResponse
+	WishlistMergeWishlistsExecute(r ApiWishlistMergeWishlistsRequest) (*WishlistWishlistResponse, *http.Response, error)
+
+	/*
+		WishlistRemoveItemFromWishlist Method for WishlistRemoveItemFromWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistRemoveItemFromWishlistRequest
+	*/
+	WishlistRemoveItemFromWishlist(ctx context.Context) ApiWishlistRemoveItemFromWishlistRequest
+
+	// WishlistRemoveItemFromWishlistExecute executes the request
+	//  @return map[string]interface{}
+	WishlistRemoveItemFromWishlistExecute(r ApiWishlistRemoveItemFromWishlistRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		WishlistUpdateItemInWishlist Method for WishlistUpdateItemInWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistUpdateItemInWishlistRequest
+	*/
+	WishlistUpdateItemInWishlist(ctx context.Context) ApiWishlistUpdateItemInWishlistRequest
+
+	// WishlistUpdateItemInWishlistExecute executes the request
+	//  @return WishlistWishlistItemResponse
+	WishlistUpdateItemInWishlistExecute(r ApiWishlistUpdateItemInWishlistRequest) (*WishlistWishlistItemResponse, *http.Response, error)
+
+	/*
+		WishlistUpdateWishlist Method for WishlistUpdateWishlist
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiWishlistUpdateWishlistRequest
+	*/
+	WishlistUpdateWishlist(ctx context.Context) ApiWishlistUpdateWishlistRequest
+
+	// WishlistUpdateWishlistExecute executes the request
+	//  @return WishlistWishlistResponse
+	WishlistUpdateWishlistExecute(r ApiWishlistUpdateWishlistRequest) (*WishlistWishlistResponse, *http.Response, error)
+}
+
 // WishlistAPIService WishlistAPI service
 type WishlistAPIService service
 
 type ApiWishlistAddItemToWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistAddItemToWishlistRequest
 }
 
@@ -155,7 +350,7 @@ func (a *WishlistAPIService) WishlistAddItemToWishlistExecute(r ApiWishlistAddIt
 
 type ApiWishlistAreItemsInWishlistsRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistAreItemsInWishlistsRequest
 }
 
@@ -286,7 +481,7 @@ func (a *WishlistAPIService) WishlistAreItemsInWishlistsExecute(r ApiWishlistAre
 
 type ApiWishlistBulkCreateSharingRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistBulkCreateSharingRequest
 }
 
@@ -417,7 +612,7 @@ func (a *WishlistAPIService) WishlistBulkCreateSharingExecute(r ApiWishlistBulkC
 
 type ApiWishlistBulkRemoveItemsFromWishlistsRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistBulkRemoveItemsFromWishlistsRequest
 }
 
@@ -548,7 +743,7 @@ func (a *WishlistAPIService) WishlistBulkRemoveItemsFromWishlistsExecute(r ApiWi
 
 type ApiWishlistBulkRevokeSharingRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistBulkRevokeSharingRequest
 }
 
@@ -679,7 +874,7 @@ func (a *WishlistAPIService) WishlistBulkRevokeSharingExecute(r ApiWishlistBulkR
 
 type ApiWishlistCreateWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistCreateWishlistRequest
 }
 
@@ -810,7 +1005,7 @@ func (a *WishlistAPIService) WishlistCreateWishlistExecute(r ApiWishlistCreateWi
 
 type ApiWishlistDeleteWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistDeleteWishlistRequest
 }
 
@@ -941,7 +1136,7 @@ func (a *WishlistAPIService) WishlistDeleteWishlistExecute(r ApiWishlistDeleteWi
 
 type ApiWishlistGetItemFromWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistGetItemFromWishlistRequest
 }
 
@@ -1072,7 +1267,7 @@ func (a *WishlistAPIService) WishlistGetItemFromWishlistExecute(r ApiWishlistGet
 
 type ApiWishlistGetWishlistByIdRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistGetWishlistByIdRequest
 }
 
@@ -1203,7 +1398,7 @@ func (a *WishlistAPIService) WishlistGetWishlistByIdExecute(r ApiWishlistGetWish
 
 type ApiWishlistGetWishlistBySharedCodeRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistGetWishlistBySharedCodeRequest
 }
 
@@ -1334,7 +1529,7 @@ func (a *WishlistAPIService) WishlistGetWishlistBySharedCodeExecute(r ApiWishlis
 
 type ApiWishlistListWishlistItemsRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistListWishlistItemsRequest
 }
 
@@ -1465,7 +1660,7 @@ func (a *WishlistAPIService) WishlistListWishlistItemsExecute(r ApiWishlistListW
 
 type ApiWishlistListWishlistsRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistListWishlistsRequest
 }
 
@@ -1596,7 +1791,7 @@ func (a *WishlistAPIService) WishlistListWishlistsExecute(r ApiWishlistListWishl
 
 type ApiWishlistMergeWishlistsRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistMergeWishlistsRequest
 }
 
@@ -1727,7 +1922,7 @@ func (a *WishlistAPIService) WishlistMergeWishlistsExecute(r ApiWishlistMergeWis
 
 type ApiWishlistRemoveItemFromWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistRemoveItemFromWishlistRequest
 }
 
@@ -1858,7 +2053,7 @@ func (a *WishlistAPIService) WishlistRemoveItemFromWishlistExecute(r ApiWishlist
 
 type ApiWishlistUpdateItemInWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistUpdateItemInWishlistRequest
 }
 
@@ -1989,7 +2184,7 @@ func (a *WishlistAPIService) WishlistUpdateItemInWishlistExecute(r ApiWishlistUp
 
 type ApiWishlistUpdateWishlistRequest struct {
 	ctx        context.Context
-	ApiService *WishlistAPIService
+	ApiService WishlistAPI
 	body       *WishlistUpdateWishlistRequest
 }
 
